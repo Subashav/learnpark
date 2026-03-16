@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import BlurText from './BlurText';
 import girlFour from './assets/girl 4.png';
 

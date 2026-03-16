@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import AntigravityHero from '../AntigravityHero';
 import { faculty, programs, results, reviews, testimonials } from '../data/siteContent';
 import girlOne from '../assets/girl 1.png';
