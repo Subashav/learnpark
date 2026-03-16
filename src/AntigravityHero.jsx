@@ -7,7 +7,7 @@ export default function AntigravityHero() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden rounded-[2.2rem] border border-[#EAE7E2] bg-[#F3F3F3] px-5 pb-8 pt-8 text-[#1D1D1F] shadow-[0_10px_36px_rgba(31,31,33,0.06)] md:px-8 md:pb-12 md:pt-10 xl:px-10">
+    <section className="relative isolate overflow-hidden rounded-[2rem] border border-[#EAE7E2] bg-[#F3F3F3] px-4 pb-7 pt-6 text-[#1D1D1F] shadow-[0_10px_36px_rgba(31,31,33,0.06)] sm:px-5 md:rounded-[2.2rem] md:px-8 md:pb-12 md:pt-10 xl:px-10">
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
@@ -19,14 +19,14 @@ export default function AntigravityHero() {
 
       <div className="antigravity-mesh pointer-events-none absolute inset-0 opacity-60" />
 
-      <h1 className="font-heading relative z-10 mx-auto mb-3 w-max max-w-full text-center text-[clamp(1.6rem,3.8vw,4rem)] font-bold uppercase tracking-[0.09em] whitespace-nowrap md:mb-2">
+      <h1 className="font-heading relative z-10 mx-auto mb-4 max-w-full text-center text-[clamp(1.35rem,6vw,4rem)] font-bold uppercase leading-tight tracking-[0.08em] md:mb-2">
         <span className="text-[#1F78B4]">Learnpark</span>{' '}
         <span className="text-[#2E9E72]">Neet Academy</span>
       </h1>
 
-      <div className="relative z-10 mx-auto grid min-h-[64vh] max-w-[1360px] items-center gap-6 md:grid-cols-[1.12fr_0.88fr]">
-        <div>
-          <div className="inline-flex items-center rounded-full border border-[#CFE0F2] bg-gradient-to-r from-[#EAF4FF] to-[#EAFBF4] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#2C5F87]">
+      <div className="relative z-10 mx-auto grid max-w-[1360px] items-center gap-6 md:min-h-[64vh] md:grid-cols-[1.12fr_0.88fr]">
+        <div className="text-center md:text-left">
+          <div className="inline-flex items-center rounded-full border border-[#CFE0F2] bg-gradient-to-r from-[#EAF4FF] to-[#EAFBF4] px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#2C5F87] sm:px-4 sm:text-xs sm:tracking-[0.2em]">
             NEET 2026 Admissions Open
           </div>
 
@@ -36,27 +36,27 @@ export default function AntigravityHero() {
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
-            className="font-heading mt-6 mb-2 text-5xl font-extrabold leading-[1.02] md:text-7xl"
+            className="font-heading mb-2 mt-5 text-4xl font-extrabold leading-[1.04] sm:text-5xl md:mt-6 md:text-7xl"
             segmentClassName="bg-gradient-to-r from-[#1D1D1F] to-[#7A5F47] bg-clip-text text-transparent"
           />
 
-          <p className="mt-4 max-w-2xl text-base leading-7 text-[#595652] md:text-lg">
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#595652] sm:text-base md:text-lg">
             Expert faculty, structured study plans, daily practice, and full-length test analysis for Class 11, Class 12, and repeater NEET aspirants.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
             <button
-              className="mercury-btn relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#1F78B4] bg-gradient-to-r from-[#1F78B4] to-[#2E9E72] px-8 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-transform duration-300 hover:-translate-y-0.5"
+              className="mercury-btn relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-[#1F78B4] bg-gradient-to-r from-[#1F78B4] to-[#2E9E72] px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto sm:px-8"
               style={{ fontFamily: 'Poppins, Inter, system-ui, sans-serif' }}
             >
               Book Free Counselling
             </button>
-            <button className="inline-flex items-center justify-center rounded-full border border-[#D1E0EF] bg-[#EEF6FF] px-8 py-3 text-sm font-semibold text-[#24597D] transition hover:border-[#1F78B4] hover:text-[#1F78B4]">
+            <button className="inline-flex w-full items-center justify-center rounded-full border border-[#D1E0EF] bg-[#EEF6FF] px-6 py-3 text-sm font-semibold text-[#24597D] transition hover:border-[#1F78B4] hover:text-[#1F78B4] sm:w-auto sm:px-8">
               View Programs
             </button>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3 text-sm text-[#595652]">
+          <div className="mt-7 flex flex-wrap justify-center gap-3 text-sm text-[#595652] md:justify-start">
             <span className="rounded-full border border-[#CFE0F2] bg-[#EAF4FF] px-4 py-2 text-[#2C5F87]">Daily practice sheets</span>
             <span className="rounded-full border border-[#D5EAD4] bg-[#ECF8EC] px-4 py-2 text-[#2F7A56]">Weekly test analytics</span>
             <span className="rounded-full border border-[#E8DBBD] bg-[#FFF7E7] px-4 py-2 text-[#8A6B2A]">Parent performance reports</span>
@@ -67,7 +67,7 @@ export default function AntigravityHero() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 3, ease: 'easeInOut' }}
-          className="w-full rounded-[2rem] border border-[#E3DDD4] bg-[#F3F3F3] p-8 shadow-[0_8px_28px_rgba(31,31,33,0.07)] md:p-8"
+          className="w-full rounded-[1.6rem] border border-[#E3DDD4] bg-[#F3F3F3] p-5 shadow-[0_8px_28px_rgba(31,31,33,0.07)] sm:p-6 md:rounded-[2rem] md:p-8"
         >
           <p className="text-xs uppercase tracking-[0.24em] text-[#5E6E80]">This Month at LearnPark</p>
           <div className="mt-5 grid gap-4">
@@ -78,7 +78,7 @@ export default function AntigravityHero() {
             ].map(([label, value]) => (
               <div key={label} className="rounded-2xl border border-[#E6E1D8] bg-[#F3F3F3] p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-[#817B71]">{label}</p>
-                <p className="mt-2 font-heading text-xl font-semibold text-[#252322]">{value}</p>
+                <p className="mt-2 font-heading text-lg font-semibold text-[#252322] sm:text-xl">{value}</p>
               </div>
             ))}
           </div>

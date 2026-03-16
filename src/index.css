@@ -17,6 +17,7 @@ body,
 
 body {
   font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 .font-heading {
@@ -50,8 +51,24 @@ body {
 }
 
 .comments-scroll-item {
-  width: min(360px, 88vw);
+  width: min(340px, 86vw);
   flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .image-hover-rise:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 22px rgba(31, 120, 180, 0.16);
+  }
+
+  .comments-scroll-track {
+    gap: 0.875rem;
+    animation-duration: 44s;
+  }
+
+  .comments-scroll-item {
+    width: min(300px, 84vw);
+  }
 }
 
 @keyframes commentsScroll {

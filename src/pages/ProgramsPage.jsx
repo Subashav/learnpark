@@ -2,10 +2,10 @@ import { programs } from '../data/siteContent';
 
 export default function ProgramsPage() {
   return (
-    <section className="mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)] md:p-8">
+    <section className="mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
       <div className="mb-8 max-w-3xl">
         <p className="text-xs uppercase tracking-[0.24em] text-[#1F78B4]">Programs</p>
-        <h1 className="font-heading mt-3 text-3xl font-bold md:text-4xl">Choose the right NEET preparation path.</h1>
+        <h1 className="font-heading mt-3 text-2xl font-bold md:text-4xl">Choose the right NEET preparation path.</h1>
         <p className="mt-3 text-[#5F5B55]">
           Structured programs designed for Class 11, Class 12, and repeater students with clear study systems and test planning.
         </p>
@@ -15,15 +15,15 @@ export default function ProgramsPage() {
         {programs.map((item) => (
           <article
             key={item.title}
-            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)]"
+            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
           >
             <img
               src={item.image}
               alt={item.title}
-              className="image-hover-rise mb-4 h-40 w-full rounded-2xl border border-[#ECE8E1] object-cover"
+              className="image-hover-rise mb-4 h-36 w-full rounded-2xl border border-[#ECE8E1] object-cover sm:h-40"
               loading="lazy"
             />
-            <h2 className="font-heading text-2xl font-bold text-[#2E9E72]">{item.title}</h2>
+            <h2 className="font-heading text-xl font-bold text-[#2E9E72] sm:text-2xl">{item.title}</h2>
             <p className="mt-3 text-[#5F5B55]">{item.desc}</p>
             <ul className="mt-5 space-y-2 text-sm text-[#5F5B55]">
               {item.points.map((point) => (

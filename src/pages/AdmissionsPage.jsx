@@ -1,16 +1,16 @@
 export default function AdmissionsPage() {
   return (
     <>
-      <section className="mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 text-center shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
+      <section className="mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 text-center shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
         <p className="text-xs uppercase tracking-[0.28em] text-[#1F78B4]">Admissions Open</p>
-        <h1 className="font-heading mt-3 text-3xl font-bold md:text-4xl">
+        <h1 className="font-heading mt-3 text-2xl font-bold md:text-4xl">
           Start your NEET preparation with the right batch and the right mentor.
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-[#5F5B55]">
           Join LearnPark NEET Academy for structured preparation, regular tests, doubt-solving, and
           parent performance updates.
         </p>
-        <button className="mercury-btn relative mt-8 inline-flex items-center justify-center overflow-hidden rounded-full border border-[#1F78B4] bg-gradient-to-r from-[#1F78B4] to-[#2E9E72] px-8 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-transform duration-300 hover:-translate-y-0.5">
+        <button className="mercury-btn relative mt-8 inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-[#1F78B4] bg-gradient-to-r from-[#1F78B4] to-[#2E9E72] px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto sm:px-8">
           Apply for Admission
         </button>
       </section>
@@ -23,10 +23,10 @@ export default function AdmissionsPage() {
         ].map(([title, desc]) => (
           <article
             key={title}
-            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)]"
+            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
           >
             <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Step</p>
-            <h2 className="font-heading mt-3 text-2xl font-bold text-[#2E9E72]">{title}</h2>
+            <h2 className="font-heading mt-3 text-xl font-bold text-[#2E9E72] sm:text-2xl">{title}</h2>
             <p className="mt-3 text-[#5F5B55]">{desc}</p>
           </article>
         ))}

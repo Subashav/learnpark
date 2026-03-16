@@ -33,19 +33,19 @@ export default function HomePage() {
         ].map(([title, desc]) => (
           <article
             key={title}
-            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)]"
+            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
           >
             <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Highlights</p>
-            <h2 className="font-heading mt-3 text-2xl font-bold text-[#1D1D1F]">{title}</h2>
+            <h2 className="font-heading mt-3 text-xl font-bold text-[#1D1D1F] sm:text-2xl">{title}</h2>
             <p className="mt-3 text-[#5F5B55]">{desc}</p>
           </article>
         ))}
       </section>
 
       <section className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
-        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
+        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
           <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Why parents trust us</p>
-          <h2 className="font-heading mt-3 text-3xl font-bold md:text-4xl">A disciplined system, not random coaching.</h2>
+          <h2 className="font-heading mt-3 text-2xl font-bold md:text-4xl">A disciplined system, not random coaching.</h2>
           <p className="mt-4 max-w-2xl text-[#5F5B55]">
             Students improve because preparation is tracked every week. We focus on concept mastery, revision loops, accuracy analysis, and consistent mentor support.
           </p>
@@ -63,7 +63,7 @@ export default function HomePage() {
           </div>
         </article>
 
-        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
+        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
           <p className="text-xs uppercase tracking-[0.24em] text-[#1F78B4]">Weekly study cycle</p>
           <div className="mt-5 space-y-4">
             {[
@@ -85,13 +85,13 @@ export default function HomePage() {
         </article>
       </section>
 
-      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
+      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
         <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Story Journey</p>
-        <h2 className="font-heading mt-3 text-3xl font-bold text-[#1D1D1F] md:text-4xl">
+        <h2 className="font-heading mt-3 text-2xl font-bold text-[#1D1D1F] md:text-4xl">
           A clear preparation story from first test to final rank.
         </h2>
 
-        <div className="relative mt-10 pl-12 md:pl-16">
+        <div className="relative mt-8 pl-9 sm:pl-12 md:mt-10 md:pl-16">
           <div className="absolute bottom-0 left-4 top-0 w-px bg-[#E6E1D8] md:left-6" />
           <motion.div
             initial={{ scaleY: 0 }}
@@ -108,13 +108,13 @@ export default function HomePage() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 3, delay: index * 0.22, ease: 'easeInOut' }}
-                className="group relative rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(31,31,33,0.12)]"
+                className="group relative rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(31,31,33,0.12)] sm:p-6"
               >
                 <motion.span
                   initial={{ scale: 0.9, opacity: 0.4 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 3, delay: 0.25 + index * 0.22, ease: 'easeInOut' }}
-                  className="absolute -left-[2.1rem] top-8 h-4 w-4 rounded-full border-2 border-white bg-gradient-to-br from-[#1F78B4] to-[#2E9E72] shadow-[0_0_0_5px_rgba(31,120,180,0.12)] md:-left-[2.65rem]"
+                  className="absolute -left-[1.82rem] top-8 h-4 w-4 rounded-full border-2 border-white bg-gradient-to-br from-[#1F78B4] to-[#2E9E72] shadow-[0_0_0_5px_rgba(31,120,180,0.12)] sm:-left-[2.1rem] md:-left-[2.65rem]"
                 />
 
                 <div className="mb-4 inline-flex rounded-full border border-[#DED8CF] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2E9E72]">
@@ -137,11 +137,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
+      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[#1F78B4]">Results That Matter</p>
-            <h2 className="font-heading mt-3 text-3xl font-bold leading-tight text-[#1D1D1F] md:text-4xl">
+            <h2 className="font-heading mt-3 text-2xl font-bold leading-tight text-[#1D1D1F] md:text-4xl">
               Disciplined preparation. Real score improvement. Medical seat focus.
             </h2>
             <p className="mt-4 max-w-2xl text-[#5F5B55]">
@@ -163,7 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)] md:p-8">
+      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
         <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Comments</p>
         <h3 className="font-heading mt-2 text-2xl font-bold text-[#1D1D1F] md:text-3xl">What students and parents say</h3>
 
@@ -177,11 +177,11 @@ export default function HomePage() {
                 <img
                   src={image}
                   alt={title}
-                  className="image-hover-rise mb-4 h-44 w-full rounded-2xl border border-[#ECE8E1] object-cover"
+                  className="image-hover-rise mb-4 h-40 w-full rounded-2xl border border-[#ECE8E1] object-cover sm:h-44"
                   loading="lazy"
                 />
                 <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">{title}</p>
-                <p className="mt-4 text-lg leading-8 text-[#5F5B55]">{quote}</p>
+                <p className="mt-4 text-base leading-7 text-[#5F5B55] sm:text-lg sm:leading-8">{quote}</p>
               </article>
             ))}
           </div>
