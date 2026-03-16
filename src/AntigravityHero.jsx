@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import BlurText from './BlurText';
 import girlFour from './assets/girl 4.png';
 
+const heroTaglines = ['Focused. Structured. Trusted.', 'Daily Tests. Real Progress.', 'Mentors Who Build Ranks.'];
+
 export default function AntigravityHero() {
-  const heroTaglines = [
-    'Dream Big. Crack NEET.',
-    'Study Smart. Rank Higher.',
-    "Erode's Path to MBBS.",
-  ];
   const [taglineIndex, setTaglineIndex] = useState(0);
 
   useEffect(() => {
@@ -17,141 +14,117 @@ export default function AntigravityHero() {
     }, 3000);
 
     return () => clearInterval(intervalId);
-  }, [heroTaglines.length]);
-
-  const handleAnimationComplete = () => {
-    console.log('Animation completed!');
-  };
+  }, []);
 
   return (
-    <section className="relative isolate overflow-hidden rounded-[2rem] border border-[#B8DCF2] bg-[#EAF5FD] px-4 pb-7 pt-6 text-[#1D1D1F] shadow-[0_10px_36px_rgba(31,120,180,0.08)] sm:px-5 md:rounded-[2.2rem] md:px-8 md:pb-12 md:pt-10 xl:px-10">
-      <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(180,220,245,0.45) 0%, rgba(180,220,245,0.2) 36%, rgba(255,255,255,0.1) 58%, rgba(255,255,255,0) 76%)',
-          filter: 'blur(28px)',
-        }}
-      />
+    <section className="relative overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:px-6 sm:py-8 md:rounded-[32px] lg:px-12 lg:py-14">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.10),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(22,163,74,0.08),transparent_28%)]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#BFDBFE] to-transparent" />
 
-      <div className="antigravity-mesh pointer-events-none absolute inset-0 opacity-60" />
-
-      <h1 className="font-heading relative z-10 mx-auto mb-2 max-w-full text-center text-[clamp(1.35rem,6vw,4rem)] font-bold leading-tight tracking-[0.01em] md:mb-1">
-        <span className="text-[#1F78B4]">Future Doctors</span>{' '}
-        <span className="text-[#2E9E72]">Start Here.</span>
-      </h1>
-      <p className="relative z-10 text-center text-xs uppercase tracking-[0.2em] text-[#5E7E9A] sm:text-sm">
-        LearnPark NEET Academy, Erode
-      </p>
-
-      <div className="relative z-10 mx-auto grid max-w-[1360px] items-center gap-6 md:min-h-[64vh] md:grid-cols-[1.12fr_0.88fr]">
-        <div className="min-w-0 text-center md:text-left">
-          <div className="inline-flex max-w-full items-center rounded-full border border-[#CFE0F2] bg-gradient-to-r from-[#EAF4FF] to-[#EAFBF4] px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#2C5F87] sm:px-4 sm:text-xs sm:tracking-[0.2em]">
+      <div className="relative z-10 grid items-center gap-7 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div>
+          <div className="inline-flex items-center rounded-full border border-[#DBEAFE] bg-[#EFF6FF] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2563EB] sm:px-4 sm:text-xs sm:tracking-[0.2em]">
             NEET 2026 Admissions Open
           </div>
 
-          <BlurText
-            key={heroTaglines[taglineIndex]}
-            text={heroTaglines[taglineIndex]}
-            delay={160}
-            animateBy="words"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="font-heading mb-2 mt-5 text-3xl font-extrabold leading-[1.08] sm:text-4xl md:mt-6 md:text-5xl lg:text-6xl"
-            segmentClassName="bg-gradient-to-r from-[#1F78B4] via-[#2C8CB8] to-[#2E9E72] bg-clip-text text-transparent"
-          />
+          <h1 className="font-heading mt-5 max-w-[12ch] text-[clamp(2.3rem,10vw,3.6rem)] font-bold leading-[0.98] tracking-[-0.04em] text-[#0F172A] md:mt-6 md:max-w-[11ch] md:text-6xl">
+            Crack NEET with India's Most Trusted Mentors
+          </h1>
 
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#595652] sm:text-base md:text-lg">
-            Expert faculty, structured study plans, daily practice, and full-length test analysis for Class 11, Class 12, and repeater NEET aspirants.
-          </p>
-
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
-            <button
-              className="mercury-btn relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-[#1F78B4] bg-gradient-to-r from-[#1F78B4] to-[#2E9E72] px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto sm:px-8"
-              style={{ fontFamily: 'Poppins, Inter, system-ui, sans-serif' }}
-            >
-              Book Free Counselling
-            </button>
-            <button className="inline-flex w-full items-center justify-center rounded-full border border-[#D1E0EF] bg-[#EEF6FF] px-6 py-3 text-sm font-semibold text-[#24597D] transition hover:border-[#1F78B4] hover:text-[#1F78B4] sm:w-auto sm:px-8">
-              View Programs
-            </button>
+          <div className="mt-3 min-h-[2rem] text-base font-semibold text-[#16A34A] sm:mt-4 sm:min-h-[2.25rem] sm:text-xl">
+            <BlurText
+              key={heroTaglines[taglineIndex]}
+              text={heroTaglines[taglineIndex]}
+              delay={140}
+              animateBy="words"
+              direction="top"
+              className="font-heading text-base font-semibold sm:text-xl"
+              segmentClassName="bg-gradient-to-r from-[#2563EB] to-[#16A34A] bg-clip-text text-transparent"
+            />
           </div>
 
-          <div className="mt-7 flex flex-wrap justify-center gap-3 text-sm text-[#595652] md:justify-start">
-            <span className="rounded-full border border-[#CFE0F2] bg-[#EAF4FF] px-3 py-2 text-xs text-[#2C5F87] sm:px-4 sm:text-sm">Daily practice sheets</span>
-            <span className="rounded-full border border-[#D5EAD4] bg-[#ECF8EC] px-3 py-2 text-xs text-[#2F7A56] sm:px-4 sm:text-sm">Weekly test analytics</span>
-            <span className="rounded-full border border-[#CFE0F2] bg-[#EAF4FF] px-3 py-2 text-xs text-[#2C5F87] sm:px-4 sm:text-sm">Parent performance reports</span>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#475569] sm:mt-5 sm:text-base sm:leading-8">
+            Structured preparation, expert faculty, and proven results to help students secure top medical ranks.
+          </p>
+
+          <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+            <Link
+              to="/programs"
+              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(37,99,235,0.24)] transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              Join NEET Program
+            </Link>
+            <Link
+              to="/admissions"
+              className="inline-flex items-center justify-center rounded-xl border border-[#CBD5E1] bg-white px-6 py-3.5 text-sm font-semibold text-[#0F172A] transition-colors hover:border-[#2563EB] hover:text-[#2563EB]"
+            >
+              Download Syllabus
+            </Link>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-3">
+            {['NEET Focused Curriculum', 'Expert Faculty', 'Proven Results'].map((item) => (
+              <div key={item} className="flex items-center gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-sm font-medium text-[#334155]">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#DCFCE7] text-[#16A34A]">
+                  <svg viewBox="0 0 20 20" className="h-4 w-4 fill-current" aria-hidden="true">
+                    <path d="M7.7 13.3 4.4 10l-1.4 1.4 4.7 4.7L17 6.8l-1.4-1.4-7.9 7.9Z" />
+                  </svg>
+                </span>
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="flex min-w-0 items-center justify-center"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="relative mx-auto w-full max-w-[420px] sm:max-w-[520px]"
         >
-          <img
-            src={girlFour}
-            alt="LearnPark NEET student"
-            className="max-h-[520px] w-full max-w-[340px] rounded-[2rem] object-contain drop-shadow-xl"
-          />
+          <div className="absolute -left-6 top-10 hidden rounded-2xl border border-[#DBEAFE] bg-white px-4 py-3 shadow-[0_12px_30px_rgba(37,99,235,0.12)] lg:block">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#64748B]">Selections</p>
+            <p className="mt-1 font-heading text-2xl font-bold text-[#2563EB]">1200+</p>
+          </div>
+          <div className="absolute -right-4 bottom-8 hidden rounded-2xl border border-[#DCFCE7] bg-white px-4 py-3 shadow-[0_12px_30px_rgba(22,163,74,0.14)] lg:block">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#64748B]">Success Rate</p>
+            <p className="mt-1 font-heading text-2xl font-bold text-[#16A34A]">95%</p>
+          </div>
+
+          <div className="rounded-[24px] border border-[#DBEAFE] bg-gradient-to-b from-[#EFF6FF] to-white p-3 shadow-[0_24px_60px_rgba(37,99,235,0.14)] sm:rounded-[28px] sm:p-4">
+            <div className="rounded-[20px] bg-[linear-gradient(180deg,rgba(37,99,235,0.08),rgba(6,182,212,0.04))] p-3 sm:rounded-[24px] sm:p-4">
+              <img
+                src={girlFour}
+                alt="LearnPark student preparing for NEET"
+                className="mx-auto w-full max-w-[300px] object-contain sm:max-w-[360px]"
+              />
+            </div>
+            <div className="mt-4 grid grid-cols-1 gap-3 min-[440px]:grid-cols-3">
+              {[
+                ['15+', 'Faculty Experience'],
+                ['Weekly', 'Performance Reviews'],
+                ['1:1', 'Mentorship Support'],
+              ].map(([value, label]) => (
+                <div key={label} className="rounded-2xl border border-[#E2E8F0] bg-white px-3 py-3 text-center sm:py-4">
+                  <p className="font-heading text-lg font-bold text-[#0F172A] sm:text-xl">{value}</p>
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#64748B]">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 lg:hidden">
+            <div className="rounded-2xl border border-[#DBEAFE] bg-white px-4 py-3 text-center shadow-[0_12px_24px_rgba(37,99,235,0.10)]">
+              <p className="text-xs uppercase tracking-[0.18em] text-[#64748B]">Selections</p>
+              <p className="mt-1 font-heading text-2xl font-bold text-[#2563EB]">1200+</p>
+            </div>
+            <div className="rounded-2xl border border-[#DCFCE7] bg-white px-4 py-3 text-center shadow-[0_12px_24px_rgba(22,163,74,0.10)]">
+              <p className="text-xs uppercase tracking-[0.18em] text-[#64748B]">Success Rate</p>
+              <p className="mt-1 font-heading text-2xl font-bold text-[#16A34A]">95%</p>
+            </div>
+          </div>
         </motion.div>
       </div>
-
-      <style>{`
-        .antigravity-mesh {
-          background-image:
-            radial-gradient(circle at 20% 20%, rgba(229, 212, 192, 0.24), transparent 42%),
-            radial-gradient(circle at 82% 24%, rgba(255, 255, 255, 0.7), transparent 36%),
-            radial-gradient(circle at 50% 80%, rgba(110, 79, 214, 0.12), transparent 38%),
-            linear-gradient(115deg, rgba(229, 212, 192, 0.08), rgba(255, 255, 255, 0.15), rgba(110, 79, 214, 0.08));
-          background-size: 180% 180%;
-          animation: liquidMesh 18s ease-in-out infinite alternate;
-          filter: blur(6px) saturate(105%);
-        }
-
-        .mercury-btn::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          border-radius: 9999px;
-          background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.04) 60%, transparent 72%);
-          transform: scale(0.6);
-          opacity: 0;
-          transition: transform 420ms ease, opacity 420ms ease;
-          pointer-events: none;
-        }
-
-        .mercury-btn:hover::before {
-          transform: scale(1.6);
-          opacity: 1;
-        }
-
-        .mercury-btn::after {
-          content: '';
-          position: absolute;
-          inset: -1px;
-          border-radius: 9999px;
-          background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(110, 79, 214, 0.25));
-          z-index: -1;
-          opacity: 0.72;
-        }
-
-        @keyframes liquidMesh {
-          0% {
-            background-position: 0% 50%;
-            transform: translate3d(0, 0, 0) scale(1);
-          }
-          50% {
-            background-position: 48% 54%;
-            transform: translate3d(0, -1.2%, 0) scale(1.03);
-          }
-          100% {
-            background-position: 100% 50%;
-            transform: translate3d(0, 0.8%, 0) scale(1.02);
-          }
-        }
-      `}</style>
     </section>
   );
 }

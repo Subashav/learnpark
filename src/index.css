@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -18,11 +18,12 @@ body,
 body {
   font-family: Inter, system-ui, sans-serif;
   overflow-x: hidden;
-  background-color: #F3F8FC;
+  background-color: #F8FAFC;
+  color: #475569;
 }
 
 .font-heading {
-  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
 }
 
 .image-hover-rise {
@@ -42,7 +43,7 @@ body {
 
 .comments-scroll-track {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   width: max-content;
   animation: commentsScroll 48s linear infinite;
 }
@@ -52,7 +53,7 @@ body {
 }
 
 .comments-scroll-item {
-  width: min(260px, 76vw);
+  width: min(320px, 82vw);
   flex: 0 0 auto;
 }
 
@@ -63,12 +64,12 @@ body {
   }
 
   .comments-scroll-track {
-    gap: 0.875rem;
+    gap: 1rem;
     animation-duration: 54s;
   }
 
   .comments-scroll-item {
-    width: min(220px, 74vw);
+    width: min(280px, 82vw);
   }
 }
 

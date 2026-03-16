@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const buildKeyframes = (from, steps) => {

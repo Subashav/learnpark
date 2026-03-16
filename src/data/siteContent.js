@@ -1,187 +1,143 @@
 export const programs = [
   {
-    title: 'Class 11 Foundation',
-    desc: 'Build strong concepts in Physics, Chemistry, and Biology with weekly assessments and mentor review.',
-    points: ['Concept-first teaching', 'Weekly chapter tests', 'Daily practice sheets'],
+    title: 'NEET Foundation Program',
+    desc: 'A concept-building program for Class 9 and 10 students who want an early academic edge in Biology, Chemistry, and Physics.',
+    points: ['Target: Class 9-10', 'Duration: 2 Years', 'Mode: Classroom + guided practice'],
+    targetClass: 'Class 9-10',
+    duration: '2 Years',
+    mode: 'Offline Classroom',
     image:
-      'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80',
   },
   {
-    title: 'Class 12 Target Batch',
-    desc: 'Board-aligned NEET preparation with revision plans, PYQs, and structured test analysis.',
-    points: ['Board + NEET sync', 'Revision cycles', 'Doubt-clearing support'],
+    title: 'NEET Preparation Program',
+    desc: 'A rigorous Class 11 program with NCERT-first teaching, weekly testing, revision planning, and subject-wise mentoring.',
+    points: ['Target: Class 11', 'Duration: 1 Year', 'Mode: Classroom + analytics'],
+    targetClass: 'Class 11',
+    duration: '1 Year',
+    mode: 'Offline Classroom',
     image:
       'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=900&q=80',
   },
   {
-    title: 'Repeater Intensive',
-    desc: 'A disciplined rank-improvement program for repeaters who need accuracy, speed, and consistency.',
-    points: ['Full syllabus tests', 'Personal mentoring', 'Performance tracking'],
+    title: 'NEET Crash Course',
+    desc: 'A focused revision program for Class 12 students with test-driven preparation, PYQ practice, and final-phase exam readiness.',
+    points: ['Target: Class 12', 'Duration: 4-6 Months', 'Mode: Revision + test series'],
+    targetClass: 'Class 12',
+    duration: '4-6 Months',
+    mode: 'Crash + Test Series',
+    image:
+      'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    title: 'NEET Repeaters Batch',
+    desc: 'An intensive rank-improvement batch for repeaters with full-syllabus tests, mentor intervention, and disciplined study systems.',
+    points: ['Target: Repeaters', 'Duration: 1 Year', 'Mode: Intensive offline coaching'],
+    targetClass: 'Repeaters',
+    duration: '1 Year',
+    mode: 'Intensive Offline',
     image:
       'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80',
   },
 ];
 
 export const results = [
-  ['685', 'Top Score'],
-  ['92%', 'Selection Success'],
-  ['1500+', 'Students Trained'],
-  ['48+', 'Faculty Experts'],
+  ['5000+', 'Students Trained'],
+  ['1200+', 'Medical Selections'],
+  ['95%', 'Success Rate'],
+  ['15+', 'Years Faculty Experience'],
 ];
 
 export const faculty = [
   [
-    'Dr. Vikas Sharma',
-    'Biology Faculty | 14+ Years',
+    'Dr. Ravi Kumar',
+    'Biology Faculty | 15+ Years NEET Coaching',
     'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80',
   ],
   [
     'Prof. Meera Iyer',
-    'Chemistry Faculty | 12+ Years',
+    'Chemistry Faculty | 12+ Years Exam Mentoring',
     'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80',
   ],
   [
-    'Prof. Arjun Rao',
-    'Physics Faculty | 11+ Years',
+    'Prof. Arjun Narayan',
+    'Physics Faculty | 14+ Years Problem Solving',
     'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=80',
   ],
 ];
 
 export const testimonials = [
   [
-    'Student Testimonial',
-    '“The weekly analysis helped me move from 470 to 652 in one year.”',
-    'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=700&q=80',
+    'Ananya S. | AIR 542',
+    '"I improved my score from 420 to 650 because every week had a clear plan, review, and performance target."',
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80',
   ],
   [
-    'Parent Feedback',
-    '“We received clear updates and knew exactly where improvement was needed.”',
-    'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=700&q=80',
+    'Karthik M. | AIR 890',
+    '"The worksheet system and analytics showed me exactly where I was losing marks and how to fix them."',
+    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80',
   ],
   [
-    'Academic Support',
-    '“Doubt-solving and revision planning made the biggest difference for me.”',
-    'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=700&q=80',
+    'Nivetha R. | AIR 1250',
+    '"From doubt-solving to mock tests, the preparation felt serious, structured, and professional throughout the year."',
+    'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=700&q=80',
   ],
 ];
 
 export const reviews = [
   {
-    name: 'Sendhura devi',
+    name: 'Sendhura Devi',
     comment:
-      'The best academy for NEET coaching in erode. Particularly for Tamil medium students they give best coaching for minimum fees. I like and refer to all.',
+      'The best academy for NEET coaching in Erode. Particularly for Tamil medium students they give strong coaching with affordable fees.',
     rating: 5.0,
   },
   {
     name: 'Elavu Arasi',
     comment:
-      'Best coaching centre, I have joined class for last 5 months. Daily class and test helped me to get confident to crack NEET. Faculties are most friendly and helping. I have seen a better improvement on my studies.',
+      'Daily classes and test practice helped me gain confidence to crack NEET. The faculty are friendly, disciplined, and genuinely supportive.',
     rating: 5.0,
   },
   {
     name: 'Harish Muthuraj',
-    comment: '1. Daily classes 2. NCERT based MCQs 3. Separate session for question discussion.',
+    comment: 'Daily classes, NCERT-based MCQs, and separate question discussion sessions make the preparation very effective.',
     rating: 4.8,
   },
   {
-    name: 'KOWSALYA DEVI',
-    comment: 'I will suggest you this NEET Academy. Fees is affordable. Best coaching center in Erode.',
+    name: 'Kowsalya Devi',
+    comment: 'Affordable fees and consistent teaching. I would suggest this academy to NEET aspirants in Erode.',
     rating: 4.9,
   },
   {
     name: 'Dharani',
-    comment: '1. Good coaching in class 2. Daily test in class 3. Weekly full portion test.',
+    comment: 'Good classroom coaching, daily tests, and weekly full-portion exams. The system keeps students regular.',
     rating: 4.8,
   },
   {
-    name: 'KRISHNA KUMAR P',
+    name: 'Krishna Kumar P',
     comment:
-      'Coaching (daily classes), daily tests and best coaching for Tamil medium. Extra care for the students. Excellent faculties.',
+      'Excellent coaching for Tamil medium students, with extra care, daily classes, and experienced faculty members.',
     rating: 5.0,
   },
   {
     name: 'Kavitha',
     comment:
-      'I will suggest you this NEET academy. Fees is affordable. Best coaching centre for Tamil and English medium. Situated near bus stand, easy for travel.',
+      'Best coaching centre for Tamil and English medium students. The location is convenient and the teaching is strong.',
     rating: 4.9,
   },
   {
-    name: 'Ramana Ramana V',
+    name: 'Ramana V',
     comment:
-      'They had conducted the class everyday from 8am to 8pm. The way of teaching is very well and easy to understand by everyone.',
+      'The classes run with discipline and the teaching style is easy to follow. Students get enough exposure to practice.',
     rating: 4.9,
   },
   {
     name: 'Jeeva Latha',
-    comment: 'Experienced faculties. Test question paper available in Tamil also. Daily test is helpful.',
-    rating: 4.8,
-  },
-  {
-    name: 'Bratheen Mass',
-    comment: 'Coaching: daily coaching. Test: regular. Faculties experienced. Its best academy.',
+    comment: 'Experienced faculty, Tamil question papers, and daily testing made a real difference in preparation.',
     rating: 4.8,
   },
   {
     name: 'Abi Santhiya',
-    comment:
-      'Best coaching for NEET. LearnPark giving extra care on students. My cousin got excellent coaching here.',
+    comment: 'LearnPark gives extra care to students. I have seen strong improvement and consistent attention from the team.',
     rating: 5.0,
-  },
-  {
-    name: 'Rivanya rajakumari',
-    comment:
-      'I had studied 2 months in this academy. I had a good experience in this LearnPark academy. If you do hard work, you can achieve your goal definitely.',
-    rating: 4.9,
-  },
-  {
-    name: 'sona ashok',
-    comment: 'Coaching is excellent, friendly faculties, best for Tamil medium. I refer to all my friends.',
-    rating: 4.9,
-  },
-  {
-    name: 'Sa_n_thiya V',
-    comment:
-      'Very good. Here academy giving lot of questions to practice. Fees also reasonable and low fees only. Super.',
-    rating: 4.8,
-  },
-  {
-    name: 'NISHASANTHOSH SASHA COLLECTIONS',
-    comment: 'Best Academy for tests and coaching.',
-    rating: 4.8,
-  },
-  {
-    name: 'Thanusha Thanushaprakasam',
-    comment: 'Easy learning method, perfect teaching method. That is LearnPark NEET.',
-    rating: 4.9,
-  },
-  {
-    name: 'RAVI RAM',
-    comment: 'Best institute in Erode. Good.',
-    rating: 4.7,
-  },
-  {
-    name: 'Ravi Ravi',
-    comment: 'Family of well-knowledged people, who guides you to the right path to achieve your aim.',
-    rating: 4.7,
-  },
-  {
-    name: 'DHIVYA DHARSHINI',
-    comment: 'Best coaching for Tamil medium students.',
-    rating: 4.8,
-  },
-  {
-    name: 'priya veni',
-    comment: 'Very good teaching.',
-    rating: 4.6,
-  },
-  {
-    name: 'Thamizhan ET',
-    comment: 'Good coaching.',
-    rating: 4.5,
-  },
-  {
-    name: 'birundha Shree',
-    comment: 'Good coaching.',
-    rating: 4.5,
   },
 ];

@@ -1,417 +1,345 @@
+import { Link } from 'react-router-dom';
 import AntigravityHero from '../AntigravityHero';
-import { results, reviews } from '../data/siteContent';
-import { motion } from 'framer-motion';
+import { faculty, programs, results, reviews, testimonials } from '../data/siteContent';
 import girlOne from '../assets/girl 1.png';
 import girlTwo from '../assets/girl 2.png';
 import boyOne from '../assets/boy 1.png';
 
+function FeatureIcon({ type }) {
+  const icons = {
+    faculty: <path d="M10 3 4 6v4c0 3.9 2.6 7.5 6 8 3.4-.5 6-4.1 6-8V6l-6-3Zm0 4.2a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6Zm0 7.4c-1.5 0-2.8-.6-3.7-1.5.2-1.4 2.5-2.1 3.7-2.1 1.2 0 3.5.7 3.7 2.1-.9.9-2.2 1.5-3.7 1.5Z" />,
+    curriculum: <path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H16v14H7.5A2.5 2.5 0 0 0 5 18.5V4.5Zm2.5-.5A1.5 1.5 0 0 0 6 5.5V16a3.4 3.4 0 0 1 1.5-.4H14V4H7.5Z" />,
+    tests: <path d="M5 3h10v14H5V3Zm2 3v2h6V6H7Zm0 4v2h3v-2H7Zm5 0h1v2h-1v-2Z" />,
+    analytics: <path d="M4 15h12v2H4v-2Zm1-2h2V8H5v5Zm4 0h2V5H9v8Zm4 0h2V9h-2v4Z" />,
+    mentorship: <path d="M10 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10c3.3 0 6 1.5 6 3.5V18H4v-1.5C4 14.5 6.7 13 10 13Z" />,
+    doubts: <path d="M4 4h12v9H8l-4 3V4Zm2 3h8V6H6v1Zm0 3h5V9H6v1Z" />,
+  };
+
+  return (
+    <svg viewBox="0 0 20 20" className="h-5 w-5 fill-current" aria-hidden="true">
+      {icons[type]}
+    </svg>
+  );
+}
+
 export default function HomePage() {
   const revealUp = {
-    initial: { opacity: 0, y: 28 },
+    initial: { opacity: 0, y: 24 },
     whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.65, ease: 'easeOut' },
-    viewport: { once: false, amount: 0.2 },
+    transition: { duration: 0.6, ease: 'easeOut' },
+    viewport: { once: false, amount: 0.18 },
   };
 
   const revealLeft = {
     initial: { opacity: 0, x: -24 },
     whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.65, ease: 'easeOut' },
-    viewport: { once: false, amount: 0.24 },
+    transition: { duration: 0.6, ease: 'easeOut' },
+    viewport: { once: false, amount: 0.18 },
   };
 
   const revealRight = {
     initial: { opacity: 0, x: 24 },
     whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.65, ease: 'easeOut' },
-    viewport: { once: false, amount: 0.24 },
+    transition: { duration: 0.6, ease: 'easeOut' },
+    viewport: { once: false, amount: 0.18 },
   };
-
-  const seoFaq = [
-    {
-      q: 'Why is LearnPark suitable for NEET students in Erode?',
-      a: 'LearnPark combines daily classes, regular tests, mentor review, and parent communication so students keep steady progress week by week.',
-    },
-    {
-      q: 'Do you support Tamil and English medium students?',
-      a: 'Yes. We provide explanation support, question practice, and review discussions for both Tamil and English medium learners.',
-    },
-    {
-      q: 'How does the academy improve marks consistently?',
-      a: 'Through chapter-wise planning, error analysis, revision cycles, and full-portion mock tests that build exam stamina and accuracy.',
-    },
-  ];
 
   const homeSeoSchema = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'LearnPark NEET Academy',
     description:
-      'NEET coaching in Erode with daily classes, test series, Tamil and English medium support, parent updates, and mentor guidance.',
+      'LearnPark NEET Academy delivers structured NEET preparation, expert faculty support, weekly testing, and proven medical entrance results.',
     areaServed: 'Erode, Tamil Nadu, India',
     educationalCredentialAwarded: 'NEET Entrance Preparation',
-    knowsAbout: ['NEET coaching', 'NCERT preparation', 'Tamil medium NEET support', 'Test series'],
     url: 'https://learnpark.vercel.app/',
   };
 
-  const storySteps = [
-    {
-      phase: 'Phase 01',
-      title: 'Diagnose the starting point',
-      text: 'We begin with a baseline test and chapter-wise error map to identify strengths and weak zones.',
-    },
-    {
-      phase: 'Phase 02',
-      title: 'Build precision habits',
-      text: 'Daily sheets, timed drills, and guided revision loops improve consistency and reduce negative marks.',
-    },
-    {
-      phase: 'Phase 03',
-      title: 'Convert effort into rank',
-      text: 'Full-syllabus mocks, mentor review, and weekly strategy resets prepare students for final exam pressure.',
-    },
+  const successStories = [
+    ['AIR 542', 'Ananya S.', '685/720', 'Madras Medical College', girlOne],
+    ['AIR 890', 'Karthik M.', '671/720', 'Stanley Medical College', boyOne],
+    ['AIR 1250', 'Nivetha R.', '658/720', 'Coimbatore Medical College', girlTwo],
+  ];
+
+  const whyChoose = [
+    ['faculty', 'Expert NEET Faculty', 'Experienced subject mentors who simplify concepts and sharpen exam thinking.'],
+    ['curriculum', 'Structured NEET Curriculum', 'A clear academic system with chapter planning, revision cycles, and target tracking.'],
+    ['tests', 'Weekly Tests', 'Consistent testing to build accuracy, speed, and confidence before the final exam.'],
+    ['analytics', 'Performance Analytics', 'Detailed review of weak areas, score trends, and improvement opportunities.'],
+    ['mentorship', 'Personal Mentorship', 'Focused support, accountability, and guidance for every stage of preparation.'],
+    ['doubts', 'Doubt Solving Sessions', 'Fast clarification support so students do not carry unresolved gaps forward.'],
+  ];
+
+  const faqs = [
+    [
+      'Why do parents trust LearnPark for NEET preparation?',
+      'Because the system is structured. Students follow a clear academic path with regular tests, mentor review, revision cycles, and parent communication.',
+    ],
+    [
+      'Do you support Tamil and English medium students?',
+      'Yes. LearnPark supports both Tamil and English medium learners with concept explanation, practice sessions, and review discussions.',
+    ],
+    [
+      'How does LearnPark improve NEET scores consistently?',
+      'By combining NCERT-first teaching, disciplined worksheets, weekly mock tests, analytics, and one-on-one mentoring for steady improvement.',
+    ],
   ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSeoSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSeoSchema) }} />
 
       <AntigravityHero />
 
-      {/* This Month at LearnPark — stats card */}
       <motion.section
         {...revealUp}
-        className="rounded-[2rem] border border-[#B8DCF2] bg-[#EAF5FD] p-5 shadow-[0_8px_28px_rgba(31,120,180,0.08)] sm:p-6 md:p-8"
+        className="grid grid-cols-2 gap-3 rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.04)] sm:gap-4 sm:px-6 sm:py-8 md:grid-cols-4 md:rounded-[32px] md:px-8 md:py-10"
       >
-        <p className="text-xs uppercase tracking-[0.18em] text-[#5E7E9A] sm:tracking-[0.24em]">This Month at LearnPark</p>
-        <div className="mt-5 grid gap-5 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-          <div className="rounded-2xl border border-[#C8E4F5] bg-[#F4FAFF] p-4 sm:p-5">
-            <div className="space-y-3">
-              {[
-                ['Next Batch', 'Starts 15 April 2026'],
-                ['Mode', 'Classroom + Guided Practice'],
-                ['Focus', 'Biology, Chemistry, Physics mastery'],
-              ].map(([label, value]) => (
-                <div key={label} className="border-b border-[#D7E9F6] pb-3 last:border-b-0 last:pb-0">
-                  <p className="text-[0.65rem] uppercase tracking-[0.14em] text-[#5E7E9A] sm:text-xs sm:tracking-[0.18em]">{label}</p>
-                  <p className="mt-1 font-heading text-lg font-semibold text-[#1A3D5C] sm:text-xl">{value}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {['12 Years of NEET coaching', 'Daily Tests', 'Parent Updates'].map((item) => (
-                <span key={item} className="rounded-full border border-[#C8E4F5] bg-white px-3 py-1.5 text-xs text-[#2D5E7E]">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2 text-center sm:grid-cols-3 lg:grid-cols-2">
-            {[
-              ['1500+', 'Students'],
-              ['92%', 'Success'],
-              ['12+', 'Years'],
-              ['Daily', 'Practice'],
-              ['Tamil', '& English'],
-              ['1:1', 'Mentoring'],
-            ].map(([value, label]) => (
-              <div key={label} className="min-w-0 rounded-2xl border border-[#B8DCF2] bg-white px-2 py-3 sm:px-3 sm:py-4">
-                <div className="font-heading text-[clamp(1.15rem,4vw,1.55rem)] font-bold leading-none text-[#1F78B4]">{value}</div>
-                <div className="mt-1 text-[0.6rem] uppercase tracking-[0.12em] text-[#5E7E9A] sm:text-xs sm:tracking-[0.18em]">{label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {results.map(([value, label]) => (
+          <article key={label} className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-4 text-center sm:px-5 sm:py-5">
+            <p className="font-heading text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">{value}</p>
+            <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#64748B] sm:text-sm sm:tracking-[0.16em]">{label}</p>
+          </article>
+        ))}
       </motion.section>
 
-      <motion.section {...revealUp} className="grid gap-4 md:gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-7 xl:gap-8">
-        <article className="rounded-[2rem] border border-[#D7E6F4] bg-gradient-to-br from-[#F6FBFF] to-[#F2F8FF] p-5 shadow-[0_10px_26px_rgba(31,120,180,0.08)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
-          <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Why parents trust us</p>
-          <h2 className="font-heading mt-3 text-2xl font-bold md:text-4xl">A disciplined system, not random coaching.</h2>
-          <p className="mt-4 max-w-2xl leading-relaxed text-[#5F5B55]">
-            Students improve because preparation is tracked every week. We focus on concept mastery, revision loops, accuracy analysis, and consistent mentor support.
+      <motion.section {...revealUp} className="rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#2563EB]">Results</p>
+          <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
+            Our Students' NEET Success Stories
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-[#475569] sm:text-base sm:leading-8">
+            Real score improvement, disciplined preparation, and medical admissions built through expert mentoring and a structured test system.
           </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:gap-5 lg:gap-6">
-            {[
-              'Daily practice and revision sheets',
-              'Weekly tests with analytics',
-              'Personal mentoring and doubt support',
-              'Parent communication and progress reports',
-            ].map((item) => (
-              <div key={item} className="rounded-2xl border border-[#DDE7F2] bg-gradient-to-r from-[#EEF6FF] to-[#ECF8EC] p-4 text-[#3E4E5F]">
-                {item}
-              </div>
-            ))}
-          </div>
-        </article>
+        </div>
 
-        <article className="rounded-[2rem] border border-[#DCE9DE] bg-gradient-to-br from-[#F6FCF8] to-[#EFF8F1] p-5 shadow-[0_10px_26px_rgba(46,158,114,0.08)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
-          <p className="text-xs uppercase tracking-[0.24em] text-[#1F78B4]">Weekly study cycle</p>
-          <div className="mt-5 space-y-4 md:space-y-5 lg:space-y-6">
-            {[
-              ['01', 'Concept Class', 'Build chapter understanding with faculty-led teaching.'],
-              ['02', 'Practice Drill', 'Solve guided questions and daily homework sheets.'],
-              ['03', 'Test + Review', 'Analyze mistakes and revise weak areas with mentors.'],
-            ].map(([num, title, desc]) => (
-              <div key={num} className="flex gap-4 border-b border-[#DCE9DE] pb-4 md:pb-5 last:border-b-0">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#6E4FD6] to-[#9D83F0] font-heading font-bold text-white">
-                  {num}
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-semibold">{title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-[#5F5B55]">{desc}</p>
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          {successStories.map(([rank, name, score, college, image]) => (
+            <motion.article
+              key={name}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] shadow-[0_16px_32px_rgba(15,23,42,0.05)]"
+            >
+              <div className="relative h-60 overflow-hidden bg-[linear-gradient(180deg,rgba(37,99,235,0.08),rgba(22,163,74,0.05))] sm:h-72">
+                <img src={image} alt={name} className="h-full w-full object-contain p-4" loading="lazy" />
+                <div className="absolute left-4 top-4 rounded-full bg-[#0F172A] px-4 py-2 text-sm font-semibold text-white shadow-lg">
+                  {rank}
                 </div>
               </div>
-            ))}
-          </div>
-        </article>
-      </motion.section>
-
-      <motion.section {...revealLeft} className="rounded-[2rem] border border-[#C8E4F5] bg-gradient-to-r from-[#F0F9FF] via-[#EAF5FD] to-[#E4F1FB] p-4 shadow-[0_10px_26px_rgba(31,120,180,0.08)] sm:p-5 md:p-5">
-        <div className="grid items-center gap-4 md:grid-cols-[0.9fr_1.1fr] md:gap-6">
-          <img
-            src={girlOne}
-            alt="Girl student holding NEET books"
-            className="mx-auto w-full max-w-[260px] rounded-2xl border border-[#ECE8E1] bg-[#FAF9F7] object-contain p-2 sm:max-w-[290px] md:max-w-[320px]"
-            loading="lazy"
-          />
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Student Spotlight</p>
-            <h3 className="font-heading mt-2 text-2xl font-semibold text-[#1D1D1F] md:text-3xl">Real students. Real preparation energy.</h3>
-            <p className="mt-3 leading-relaxed text-[#5F5B55]">
-              Daily classes, book practice, and focused revision are the foundation of consistent NEET performance.
-            </p>
-            <p className="mt-3 leading-relaxed text-[#5F5B55]">
-              This is how NEET coaching in Erode should feel: structured, measurable, and personalized for each student.
-            </p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-[#DDE7F2] bg-white px-3 py-2 text-sm text-[#3E4E5F]">Daily revision blocks</div>
-              <div className="rounded-xl border border-[#DDE7F2] bg-white px-3 py-2 text-sm text-[#3E4E5F]">Chapter-wise mentors</div>
-              <div className="rounded-xl border border-[#DDE7F2] bg-white px-3 py-2 text-sm text-[#3E4E5F]">Tamil + English support</div>
-              <div className="rounded-xl border border-[#DDE7F2] bg-white px-3 py-2 text-sm text-[#3E4E5F]">Exam-level worksheets</div>
-            </div>
-          </div>
+              <div className="p-6">
+                <h3 className="font-heading text-xl font-bold text-[#0F172A] sm:text-2xl">{name}</h3>
+                <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                  <div className="rounded-2xl border border-[#DBEAFE] bg-white px-4 py-3">
+                    <p className="uppercase tracking-[0.14em] text-[#64748B]">Score</p>
+                    <p className="mt-1 font-semibold text-[#2563EB]">{score}</p>
+                  </div>
+                  <div className="rounded-2xl border border-[#DCFCE7] bg-white px-4 py-3">
+                    <p className="uppercase tracking-[0.14em] text-[#64748B]">College</p>
+                    <p className="mt-1 font-semibold text-[#16A34A]">{college}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[2rem] border border-[#C8E4F5] bg-gradient-to-b from-[#F0F9FF] to-[#E4F1FB] p-5 shadow-[0_10px_26px_rgba(31,120,180,0.07)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
-        <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Story Journey</p>
-        <h2 className="font-heading mt-3 text-2xl font-bold text-[#1D1D1F] md:text-4xl">
-          A clear preparation story from first test to final rank.
-        </h2>
-
-        <div className="relative mt-8 pl-6 sm:pl-10 md:mt-10 md:pl-16 lg:mt-12 lg:pl-20">
-          <div className="absolute bottom-0 left-3 top-0 w-px bg-[#E6E1D8] sm:left-4 md:left-6" />
-          <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
-            style={{ originY: 0 }}
-            className="absolute bottom-0 left-3 top-0 w-px bg-gradient-to-b from-[#1F78B4] to-[#2E9E72] sm:left-4 md:left-6"
-          />
-
-          <div className="space-y-6 md:space-y-7 lg:space-y-8">
-            {storySteps.map((step, index) => (
-              <motion.article
-                key={step.phase}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.65, delay: index * 0.08, ease: 'easeOut' }}
-                className="group relative rounded-[1.5rem] border border-[#DED8CF] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(31,31,33,0.12)] sm:p-6"
-              >
-                <motion.span
-                  initial={{ scale: 0.9, opacity: 0.4 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: false, amount: 0.5 }}
-                  transition={{ duration: 0.5, delay: 0.1 + index * 0.08, ease: 'easeOut' }}
-                  className="absolute -left-[1.15rem] top-8 h-4 w-4 rounded-full border-2 border-white bg-gradient-to-br from-[#1F78B4] to-[#2E9E72] shadow-[0_0_0_5px_rgba(31,120,180,0.12)] sm:-left-[1.82rem] md:-left-[2.65rem]"
-                />
-
-                <div className="mb-4 inline-flex rounded-full border border-[#DED8CF] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2E9E72]">
-                  {step.phase}
-                </div>
-                <h3 className="font-heading text-xl font-semibold text-[#1D1D1F]">{step.title}</h3>
-                <p className="mt-3 leading-relaxed text-[#5F5B55]">{step.text}</p>
-
-                <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-[#EDE8DE]">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '100%' }}
-                    viewport={{ once: false, amount: 0.5 }}
-                    transition={{ duration: 0.9, delay: 0.16 + index * 0.08, ease: 'easeOut' }}
-                    className="h-full rounded-full bg-gradient-to-r from-[#1F78B4] to-[#2E9E72]"
-                  />
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section {...revealRight} className="rounded-[2rem] border border-[#D5E8DE] bg-gradient-to-r from-[#F1FBF5] via-[#EEF9F2] to-[#E9F5EE] p-4 shadow-[0_10px_26px_rgba(46,158,114,0.08)] sm:p-5 md:p-5">
-        <div className="grid items-center gap-4 md:grid-cols-[1.1fr_0.9fr] md:gap-6">
-          <div className="order-2 md:order-1">
-            <p className="text-xs uppercase tracking-[0.22em] text-[#2E9E72]">Student Spotlight</p>
-            <h3 className="font-heading mt-2 text-2xl font-semibold text-[#1D1D1F] md:text-3xl">Confidence grows with strong book habits.</h3>
-            <p className="mt-3 leading-relaxed text-[#5F5B55]">
-              Consistent material practice and guided chapter strategy help students convert effort into marks.
-            </p>
-            <p className="mt-3 leading-relaxed text-[#5F5B55]">
-              From foundation chapters to full-portion revisions, each week is designed to improve confidence and rank.
-            </p>
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-[#DCE9DE] bg-white p-3 text-center">
-                <p className="text-lg font-bold text-[#2E9E72]">90+</p>
-                <p className="text-[11px] uppercase tracking-[0.12em] text-[#6A7A6E]">Questions daily</p>
-              </div>
-              <div className="rounded-xl border border-[#DCE9DE] bg-white p-3 text-center">
-                <p className="text-lg font-bold text-[#2E9E72]">7/7</p>
-                <p className="text-[11px] uppercase tracking-[0.12em] text-[#6A7A6E]">Practice rhythm</p>
-              </div>
-              <div className="rounded-xl border border-[#DCE9DE] bg-white p-3 text-center">
-                <p className="text-lg font-bold text-[#2E9E72]">1:1</p>
-                <p className="text-[11px] uppercase tracking-[0.12em] text-[#6A7A6E]">Mentor review</p>
-              </div>
-            </div>
-          </div>
-          <img
-            src={girlTwo}
-            alt="Girl student carrying books"
-            className="order-1 mx-auto w-full max-w-[260px] rounded-2xl border border-[#ECE8E1] bg-[#FAF9F7] object-contain p-2 sm:max-w-[290px] md:order-2 md:max-w-[320px]"
-            loading="lazy"
-          />
-        </div>
-      </motion.section>
-
-      <motion.section {...revealUp} className="rounded-[2rem] border border-[#D7E6F4] bg-gradient-to-br from-[#F6FBFF] to-[#EEF5FE] p-5 shadow-[0_10px_28px_rgba(31,120,180,0.08)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
-        <div className="grid gap-8 md:gap-10 lg:grid-cols-[1.16fr_0.84fr] lg:items-center xl:gap-12">
-          <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-[#1F78B4]">Results That Matter</p>
-            <h2 className="font-heading mt-3 text-2xl font-bold leading-tight text-[#1D1D1F] md:text-4xl">
-              Disciplined preparation. Real score improvement. Medical seat focus.
+      <motion.section {...revealUp} className="rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#16A34A]">Courses</p>
+            <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
+              Choose the right NEET program for your academic stage
             </h2>
-            <p className="mt-4 max-w-2xl leading-relaxed text-[#5F5B55]">
-              Our teaching model combines concept clarity, daily problem practice, full-length mock tests, and personal mentoring to steadily improve accuracy and speed.
-            </p>
           </div>
+          <Link to="/programs" className="text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+            View all programs
+          </Link>
+        </div>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-5 lg:gap-6">
-            {results.map(([value, label]) => (
-              <div
-                key={label}
-                className="rounded-[1.4rem] border border-[#D7E6F4] bg-white p-5 text-center"
-              >
-                <div className="text-3xl font-extrabold text-[#2E9E72]">{value}</div>
-                <div className="mt-2 text-sm text-[#5F5B55]">{label}</div>
+        <div className="mt-8 grid gap-6 xl:grid-cols-2">
+          {programs.map((program) => (
+            <motion.article
+              key={program.title}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] shadow-[0_16px_32px_rgba(15,23,42,0.05)]"
+            >
+              <div className="grid gap-5 p-4 sm:p-6 md:grid-cols-[0.95fr_1.05fr] md:p-7">
+                <img src={program.image} alt={program.title} className="h-48 w-full rounded-3xl object-cover sm:h-56" loading="lazy" />
+                <div>
+                  <h3 className="font-heading text-xl font-bold text-[#0F172A] sm:text-2xl">{program.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#475569] sm:text-base">{program.desc}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {[program.targetClass, program.duration, program.mode].map((item) => (
+                      <span key={item} className="rounded-full border border-[#DBEAFE] bg-white px-3 py-1.5 text-xs font-medium text-[#2563EB]">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                  <ul className="mt-5 space-y-2 text-sm text-[#475569]">
+                    {program.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2">
+                        <span className="mt-1 h-2 w-2 rounded-full bg-[#16A34A]" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to="/admissions"
+                    className="mt-6 inline-flex items-center justify-center rounded-xl bg-[#0F172A] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1E293B]"
+                  >
+                    Enroll Now
+                  </Link>
+                </div>
               </div>
-            ))}
-          </div>
+            </motion.article>
+          ))}
         </div>
       </motion.section>
 
-      <motion.section {...revealLeft} className="rounded-[2rem] border border-[#C8E4F5] bg-gradient-to-r from-[#F0F9FF] via-[#EAF5FD] to-[#E4F1FB] p-4 shadow-[0_10px_26px_rgba(31,120,180,0.08)] sm:p-5 md:p-5">
-        <div className="grid items-center gap-4 md:grid-cols-[0.9fr_1.1fr] md:gap-6">
-          <img
-            src={boyOne}
-            alt="Boy student holding books"
-            className="mx-auto w-full max-w-[260px] rounded-2xl border border-[#ECE8E1] bg-[#FAF9F7] object-contain p-2 sm:max-w-[290px] md:max-w-[320px]"
-            loading="lazy"
-          />
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Student Spotlight</p>
-            <h3 className="font-heading mt-2 text-2xl font-semibold text-[#1D1D1F] md:text-3xl">Boys and girls learning with equal focus.</h3>
-            <p className="mt-3 leading-relaxed text-[#5F5B55]">
-              Structured guidance, daily tests, and mentor feedback ensure every student gets a clear growth path.
-            </p>
-            <p className="mt-3 leading-relaxed text-[#5F5B55]">
-              This preparation flow helps both repeaters and school students stay disciplined, motivated, and exam-ready.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {['Structured classroom sessions', 'Doubt-clearing everyday', 'Weekly full-portion tests', 'Progress tracking to parents'].map((item) => (
-                <span key={item} className="rounded-full border border-[#DDE7F2] bg-white px-3 py-1.5 text-xs text-[#3E4E5F]">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
+      <motion.section {...revealUp} className="rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Why Choose LearnPark</p>
+          <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
+            Professional systems that build trust with students and parents
+          </h2>
+        </div>
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {whyChoose.map(([type, title, text]) => (
+            <motion.article
+              key={title}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.25 }}
+              className="rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-[0_12px_24px_rgba(15,23,42,0.04)]"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#DBEAFE] to-[#DCFCE7] text-[#2563EB]">
+                <FeatureIcon type={type} />
+              </div>
+              <h3 className="font-heading mt-5 text-lg font-bold text-[#0F172A] sm:text-xl">{title}</h3>
+              <p className="mt-3 leading-7 text-[#475569]">{text}</p>
+            </motion.article>
+          ))}
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[2rem] border border-[#D7E6F4] bg-gradient-to-r from-[#F3F9FF] to-[#EEF5FF] p-5 shadow-[0_10px_26px_rgba(31,120,180,0.08)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
-        <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">NEET Coaching in Erode</p>
-        <h2 className="font-heading mt-3 text-2xl font-bold text-[#1D1D1F] md:text-4xl">
-          Complete NEET preparation support for Tamil and English medium students.
-        </h2>
-        <p className="mt-4 leading-relaxed text-[#5F5B55]">
-          LearnPark NEET Academy in Erode offers a structured plan with daily concept classes, NCERT-based question practice, chapter tests, weekly full-portion exams, and personal mentor reviews.
-          Students get clear progress tracking, doubt-clearing sessions, and focused revision support to improve marks steadily.
-        </p>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {[
-            ['Daily Classes', 'Faculty-led classroom coaching with chapter targets and homework review.'],
-            ['Regular Testing', 'Daily and weekly tests with error analysis for faster score improvement.'],
-            ['Parent Communication', 'Transparent progress updates so families stay aligned with student goals.'],
-          ].map(([title, text]) => (
-            <article key={title} className="rounded-2xl border border-[#CFE0F2] bg-white p-4 shadow-[0_4px_12px_rgba(31,120,180,0.08)]">
-              <h3 className="font-heading text-lg font-semibold text-[#1D1D1F]">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#5F5B55]">{text}</p>
+      <motion.section {...revealLeft} className="rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#2563EB]">Faculty</p>
+            <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
+              Professional subject experts for Biology, Chemistry, and Physics
+            </h2>
+          </div>
+          <Link to="/faculty" className="text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+            Meet the faculty
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {faculty.map(([name, role, image]) => (
+            <article key={name} className="rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-[0_12px_24px_rgba(15,23,42,0.04)]">
+              <img src={image} alt={name} className="h-20 w-20 rounded-full object-cover" loading="lazy" />
+              <h3 className="font-heading mt-5 text-xl font-bold text-[#0F172A]">{name}</h3>
+              <p className="mt-2 text-sm font-medium text-[#16A34A]">{role}</p>
+              <p className="mt-4 leading-7 text-[#475569]">
+                Trusted by students and parents for subject clarity, disciplined problem-solving, and exam-focused mentoring.
+              </p>
             </article>
           ))}
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="p-5 sm:p-6 md:p-7 lg:p-8 xl:p-9">
-        <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Comments</p>
-        <h3 className="font-heading mt-2 text-2xl font-bold text-[#1D1D1F] md:text-3xl">What students and parents say</h3>
+      <motion.section {...revealRight} className="rounded-[28px] bg-[linear-gradient(180deg,#EFF6FF_0%,#FFFFFF_100%)] px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#16A34A]">Testimonials</p>
+          <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
+            Real student stories from serious NEET preparation journeys
+          </h2>
+        </div>
 
-        <div className="comments-scroll-wrap mt-6 lg:mt-8">
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          {testimonials.map(([title, quote, image]) => (
+            <article key={title} className="overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-white shadow-[0_16px_32px_rgba(15,23,42,0.05)]">
+              <img src={image} alt={title} className="h-56 w-full object-cover sm:h-64" loading="lazy" />
+              <div className="p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#2563EB]">{title}</p>
+                <p className="mt-4 text-base leading-8 text-[#475569]">{quote}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section {...revealUp} className="rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Reviews</p>
+          <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
+            What students and parents say about the LearnPark system
+          </h2>
+        </div>
+
+        <div className="comments-scroll-wrap mt-8">
           <div className="comments-scroll-track">
             {[...reviews, ...reviews].map((review, index) => (
-              <article
-                key={`${review.name}-${index}`}
-                className="comments-scroll-item rounded-[1.2rem] border border-[#B8DCF2] bg-[#F0F9FF] p-4 shadow-[0_4px_14px_rgba(31,120,180,0.07)]"
-              >
+              <article key={`${review.name}-${index}`} className="comments-scroll-item rounded-[24px] border border-[#E2E8F0] bg-[#F8FAFC] p-5 shadow-[0_12px_24px_rgba(15,23,42,0.04)]">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#1F78B4]">{review.name}</p>
-                  <p className="text-sm font-semibold text-[#2E9E72]">{review.rating.toFixed(1)}/5</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2563EB]">{review.name}</p>
+                  <p className="text-sm font-semibold text-[#16A34A]">{review.rating.toFixed(1)}/5</p>
                 </div>
-
-                <div
-                  className="relative mt-2 w-[80px] text-[0.85rem] leading-none text-[#E3B84B]"
-                  aria-label={`${review.rating.toFixed(1)} out of 5 stars`}
-                >
+                <div className="relative mt-3 w-[84px] text-[0.9rem] leading-none text-[#F59E0B]" aria-label={`${review.rating.toFixed(1)} out of 5 stars`}>
                   <span className="opacity-30">★★★★★</span>
-                  <span
-                    className="absolute left-0 top-0 overflow-hidden whitespace-nowrap"
-                    style={{ width: `${(review.rating / 5) * 100}%` }}
-                  >
+                  <span className="absolute left-0 top-0 overflow-hidden whitespace-nowrap" style={{ width: `${(review.rating / 5) * 100}%` }}>
                     ★★★★★
                   </span>
                 </div>
-
-                <p className="mt-3 text-sm leading-6 text-[#5F5B55]">{review.comment}</p>
+                <p className="mt-4 text-sm leading-7 text-[#475569]">{review.comment}</p>
               </article>
             ))}
           </div>
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[2rem] border border-[#DCE9DE] bg-gradient-to-br from-[#F4FBF6] to-[#EDF8F0] p-5 shadow-[0_10px_26px_rgba(46,158,114,0.08)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
-        <p className="text-xs uppercase tracking-[0.24em] text-[#1F78B4]">FAQ</p>
-        <h2 className="font-heading mt-3 text-2xl font-bold text-[#1D1D1F] md:text-4xl">Common questions from NEET aspirants and parents</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {seoFaq.map((item) => (
-            <article key={item.q} className="rounded-2xl border border-[#CFE4D6] bg-white p-4 shadow-[0_4px_12px_rgba(46,158,114,0.08)] sm:p-5">
-              <h3 className="font-heading text-lg font-semibold text-[#1D1D1F]">{item.q}</h3>
-              <p className="mt-2 leading-relaxed text-[#5F5B55]">{item.a}</p>
+      <motion.section {...revealUp} className="rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#2563EB]">FAQ</p>
+          <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
+            Common questions from NEET aspirants and parents
+          </h2>
+        </div>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {faqs.map(([question, answer]) => (
+            <article key={question} className="rounded-[24px] border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6">
+              <h3 className="font-heading text-lg font-bold text-[#0F172A] sm:text-xl">{question}</h3>
+              <p className="mt-3 leading-8 text-[#475569]">{answer}</p>
             </article>
           ))}
+        </div>
+      </motion.section>
+
+      <motion.section {...revealUp} className="overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#2563EB_0%,#1D4ED8_60%,#16A34A_140%)] px-4 py-6 text-white shadow-[0_24px_60px_rgba(37,99,235,0.22)] sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/80">Start Today</p>
+            <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] sm:text-3xl md:text-4xl">
+              Start Your NEET Preparation Today
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/85 sm:text-base sm:leading-8">
+              Join a professional academic system built to earn parent trust, strengthen student confidence, and deliver serious NEET results.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+            <Link to="/admissions" className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#1D4ED8] transition-transform hover:-translate-y-0.5">
+              Enroll Now
+            </Link>
+            <Link to="/admissions" className="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/15">
+              Book Free Counseling
+            </Link>
+          </div>
         </div>
       </motion.section>
     </>
