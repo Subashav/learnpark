@@ -32,3 +32,33 @@ body {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 14px 28px rgba(31, 120, 180, 0.2);
 }
+
+.comments-scroll-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.comments-scroll-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: commentsScroll 40s linear infinite;
+}
+
+.comments-scroll-wrap:hover .comments-scroll-track {
+  animation-play-state: paused;
+}
+
+.comments-scroll-item {
+  width: min(360px, 88vw);
+  flex: 0 0 auto;
+}
+
+@keyframes commentsScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -163,19 +163,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
-        {testimonials.map(([title, quote, image]) => (
-          <article key={title} className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
-            <img
-              src={image}
-              alt={title}
-              className="image-hover-rise mb-4 h-44 w-full rounded-2xl border border-[#ECE8E1] object-cover"
-              loading="lazy"
-            />
-            <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">{title}</p>
-            <p className="mt-4 text-lg leading-8 text-[#5F5B55]">{quote}</p>
-          </article>
-        ))}
+      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)] md:p-8">
+        <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Comments</p>
+        <h3 className="font-heading mt-2 text-2xl font-bold text-[#1D1D1F] md:text-3xl">What students and parents say</h3>
+
+        <div className="comments-scroll-wrap mt-6">
+          <div className="comments-scroll-track">
+            {[...testimonials, ...testimonials].map(([title, quote, image], index) => (
+              <article
+                key={`${title}-${index}`}
+                className="comments-scroll-item rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)]"
+              >
+                <img
+                  src={image}
+                  alt={title}
+                  className="image-hover-rise mb-4 h-44 w-full rounded-2xl border border-[#ECE8E1] object-cover"
+                  loading="lazy"
+                />
+                <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">{title}</p>
+                <p className="mt-4 text-lg leading-8 text-[#5F5B55]">{quote}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );
