@@ -25,8 +25,8 @@ export default function AntigravityHero() {
       </h1>
 
       <div className="relative z-10 mx-auto grid max-w-[1360px] items-center gap-6 md:min-h-[64vh] md:grid-cols-[1.12fr_0.88fr]">
-        <div className="text-center md:text-left">
-          <div className="inline-flex items-center rounded-full border border-[#CFE0F2] bg-gradient-to-r from-[#EAF4FF] to-[#EAFBF4] px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#2C5F87] sm:px-4 sm:text-xs sm:tracking-[0.2em]">
+        <div className="min-w-0 text-center md:text-left">
+          <div className="inline-flex max-w-full items-center rounded-full border border-[#CFE0F2] bg-gradient-to-r from-[#EAF4FF] to-[#EAFBF4] px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[#2C5F87] sm:px-4 sm:text-xs sm:tracking-[0.2em]">
             NEET 2026 Admissions Open
           </div>
 
@@ -57,9 +57,9 @@ export default function AntigravityHero() {
           </div>
 
           <div className="mt-7 flex flex-wrap justify-center gap-3 text-sm text-[#595652] md:justify-start">
-            <span className="rounded-full border border-[#CFE0F2] bg-[#EAF4FF] px-4 py-2 text-[#2C5F87]">Daily practice sheets</span>
-            <span className="rounded-full border border-[#D5EAD4] bg-[#ECF8EC] px-4 py-2 text-[#2F7A56]">Weekly test analytics</span>
-            <span className="rounded-full border border-[#E8DBBD] bg-[#FFF7E7] px-4 py-2 text-[#8A6B2A]">Parent performance reports</span>
+            <span className="rounded-full border border-[#CFE0F2] bg-[#EAF4FF] px-3 py-2 text-xs text-[#2C5F87] sm:px-4 sm:text-sm">Daily practice sheets</span>
+            <span className="rounded-full border border-[#D5EAD4] bg-[#ECF8EC] px-3 py-2 text-xs text-[#2F7A56] sm:px-4 sm:text-sm">Weekly test analytics</span>
+            <span className="rounded-full border border-[#E8DBBD] bg-[#FFF7E7] px-3 py-2 text-xs text-[#8A6B2A] sm:px-4 sm:text-sm">Parent performance reports</span>
           </div>
         </div>
 
@@ -67,9 +67,9 @@ export default function AntigravityHero() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 3, ease: 'easeInOut' }}
-          className="w-full rounded-[1.6rem] border border-[#E3DDD4] bg-[#F3F3F3] p-5 shadow-[0_8px_28px_rgba(31,31,33,0.07)] sm:p-6 md:rounded-[2rem] md:p-8"
+          className="min-w-0 w-full rounded-[1.6rem] border border-[#E3DDD4] bg-[#F3F3F3] p-5 shadow-[0_8px_28px_rgba(31,31,33,0.07)] sm:p-6 md:rounded-[2rem] md:p-8"
         >
-          <p className="text-xs uppercase tracking-[0.24em] text-[#5E6E80]">This Month at LearnPark</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-[#5E6E80] sm:tracking-[0.24em]">This Month at LearnPark</p>
           <div className="mt-5 grid gap-4">
             {[
               ['Next Batch', 'Starts 15 April 2026'],
@@ -77,21 +77,21 @@ export default function AntigravityHero() {
               ['Focus', 'Biology, Chemistry, Physics mastery'],
             ].map(([label, value]) => (
               <div key={label} className="rounded-2xl border border-[#E6E1D8] bg-[#F3F3F3] p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[#817B71]">{label}</p>
+                <p className="text-[0.65rem] uppercase tracking-[0.14em] text-[#817B71] sm:text-xs sm:tracking-[0.18em]">{label}</p>
                 <p className="mt-2 font-heading text-lg font-semibold text-[#252322] sm:text-xl">{value}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div className="mt-6 grid grid-cols-3 gap-2 text-center sm:gap-3">
             {[
               ['1500+', 'Students'],
               ['92%', 'Success'],
               ['12+', 'Years'],
             ].map(([value, label]) => (
-              <div key={label} className="rounded-2xl border border-[#E6E1D8] bg-[#F3F3F3] px-3 py-4">
-                <div className="font-heading text-2xl font-bold text-[#1F78B4]">{value}</div>
-                <div className="mt-1 text-xs uppercase tracking-[0.18em] text-[#817B71]">{label}</div>
+              <div key={label} className="min-w-0 rounded-2xl border border-[#E6E1D8] bg-[#F3F3F3] px-2 py-3 sm:px-3 sm:py-4">
+                <div className="font-heading text-[clamp(1.5rem,6.5vw,2rem)] font-bold leading-none text-[#1F78B4]">{value}</div>
+                <div className="mt-1 text-[0.62rem] uppercase tracking-[0.12em] text-[#817B71] sm:text-xs sm:tracking-[0.18em]">{label}</div>
               </div>
             ))}
           </div>
