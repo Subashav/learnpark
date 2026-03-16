@@ -21,6 +21,33 @@ export default function HomePage() {
     },
   ];
 
+  const studentGallery = [
+    {
+      title: 'Focused NEET Preparation',
+      image: '/students/student-1.jpg',
+      fallback:
+        'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80',
+    },
+    {
+      title: 'Daily Study Discipline',
+      image: '/students/student-2.jpg',
+      fallback:
+        'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80',
+    },
+    {
+      title: 'Books + Practice Routine',
+      image: '/students/student-3.jpg',
+      fallback:
+        'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80',
+    },
+    {
+      title: 'Exam Confidence Building',
+      image: '/students/student-4.jpg',
+      fallback:
+        'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=900&q=80',
+    },
+  ];
+
   return (
     <>
       <AntigravityHero />
@@ -38,6 +65,28 @@ export default function HomePage() {
             <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Highlights</p>
             <h2 className="font-heading mt-3 text-xl font-bold text-[#1D1D1F] sm:text-2xl">{title}</h2>
             <p className="mt-3 max-w-[32ch] leading-relaxed text-[#5F5B55]">{desc}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="grid gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4 xl:gap-6">
+        {studentGallery.map((item) => (
+          <article
+            key={item.title}
+            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-4 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-5"
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              onError={(event) => {
+                event.currentTarget.onerror = null;
+                event.currentTarget.src = item.fallback;
+              }}
+              className="image-hover-rise h-52 w-full rounded-2xl border border-[#ECE8E1] object-cover sm:h-56"
+              loading="lazy"
+            />
+            <p className="mt-3 text-xs uppercase tracking-[0.2em] text-[#1F78B4]">Student Snapshot</p>
+            <h3 className="font-heading mt-2 text-lg font-semibold text-[#1D1D1F]">{item.title}</h3>
           </article>
         ))}
       </section>
