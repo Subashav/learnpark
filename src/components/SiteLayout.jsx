@@ -12,12 +12,12 @@ export default function SiteLayout() {
   return (
     <div className="relative min-h-screen bg-white text-[#1D1D1F]">
       <header className="sticky top-0 z-30 border-b border-[#E7E5E4] bg-white">
-        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-1.5 md:px-6 lg:px-8">
+        <div className="flex w-full items-center justify-between px-3 py-1 md:px-5 lg:px-6">
           <NavLink to="/" className="inline-flex items-center">
-            <img src={logoImage} alt="LearnPark NEET Academy" className="h-24 w-24 object-contain" />
+            <img src={logoImage} alt="LearnPark NEET Academy" className="h-20 w-20 object-contain" />
           </NavLink>
 
-          <nav className="hidden gap-4 text-sm text-[#6B6761] md:flex">
+          <nav className="hidden gap-3 text-sm text-[#6B6761] md:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
