@@ -35,7 +35,7 @@ export default function HomePage() {
             key={title}
             className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)]"
           >
-            <p className="text-xs uppercase tracking-[0.22em] text-[#7A5F47]">Highlights</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Highlights</p>
             <h2 className="font-heading mt-3 text-2xl font-bold text-[#1D1D1F]">{title}</h2>
             <p className="mt-3 text-[#5F5B55]">{desc}</p>
           </article>
@@ -44,7 +44,7 @@ export default function HomePage() {
 
       <section className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
         <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
-          <p className="text-xs uppercase tracking-[0.24em] text-[#7A5F47]">Why parents trust us</p>
+          <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Why parents trust us</p>
           <h2 className="font-heading mt-3 text-3xl font-bold md:text-4xl">A disciplined system, not random coaching.</h2>
           <p className="mt-4 max-w-2xl text-[#5F5B55]">
             Students improve because preparation is tracked every week. We focus on concept mastery, revision loops, accuracy analysis, and consistent mentor support.
@@ -56,7 +56,7 @@ export default function HomePage() {
               'Personal mentoring and doubt support',
               'Parent communication and progress reports',
             ].map((item) => (
-              <div key={item} className="rounded-2xl border border-[#ECE8E1] bg-[#F3F3F3] p-4 text-[#5F5B55]">
+              <div key={item} className="rounded-2xl border border-[#DDE7F2] bg-gradient-to-r from-[#EEF6FF] to-[#ECF8EC] p-4 text-[#3E4E5F]">
                 {item}
               </div>
             ))}
@@ -64,7 +64,7 @@ export default function HomePage() {
         </article>
 
         <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
-          <p className="text-xs uppercase tracking-[0.24em] text-[#7A5F47]">Weekly study cycle</p>
+          <p className="text-xs uppercase tracking-[0.24em] text-[#1F78B4]">Weekly study cycle</p>
           <div className="mt-5 space-y-4">
             {[
               ['01', 'Concept Class', 'Build chapter understanding with faculty-led teaching.'],
@@ -86,7 +86,7 @@ export default function HomePage() {
       </section>
 
       <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
-        <p className="text-xs uppercase tracking-[0.24em] text-[#7A5F47]">Story Journey</p>
+        <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Story Journey</p>
         <h2 className="font-heading mt-3 text-3xl font-bold text-[#1D1D1F] md:text-4xl">
           A clear preparation story from first test to final rank.
         </h2>
@@ -140,7 +140,7 @@ export default function HomePage() {
       <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-8 shadow-[0_8px_24px_rgba(31,31,33,0.05)]">
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-[#7A5F47]">Results That Matter</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#1F78B4]">Results That Matter</p>
             <h2 className="font-heading mt-3 text-3xl font-bold leading-tight text-[#1D1D1F] md:text-4xl">
               Disciplined preparation. Real score improvement. Medical seat focus.
             </h2>
@@ -155,7 +155,7 @@ export default function HomePage() {
                 key={label}
                 className="rounded-[1.4rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 text-center"
               >
-                <div className="text-3xl font-extrabold text-[#6E4FD6]">{value}</div>
+                <div className="text-3xl font-extrabold text-[#2E9E72]">{value}</div>
                 <div className="mt-2 text-sm text-[#5F5B55]">{label}</div>
               </div>
             ))}
@@ -169,10 +169,10 @@ export default function HomePage() {
             <img
               src={image}
               alt={title}
-              className="mb-4 h-44 w-full rounded-2xl border border-[#ECE8E1] object-cover"
+              className="image-hover-rise mb-4 h-44 w-full rounded-2xl border border-[#ECE8E1] object-cover"
               loading="lazy"
             />
-            <p className="text-xs uppercase tracking-[0.22em] text-[#7A5F47]">{title}</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">{title}</p>
             <p className="mt-4 text-lg leading-8 text-[#5F5B55]">{quote}</p>
           </article>
         ))}

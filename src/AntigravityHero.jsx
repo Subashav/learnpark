@@ -26,7 +26,7 @@ export default function AntigravityHero() {
 
       <div className="relative z-10 mx-auto grid min-h-[64vh] max-w-[1360px] items-center gap-6 md:grid-cols-[1.12fr_0.88fr]">
         <div>
-          <div className="inline-flex items-center rounded-full border border-[#DCD7CF] bg-[#F6F3EE] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#6A6257]">
+          <div className="inline-flex items-center rounded-full border border-[#CFE0F2] bg-gradient-to-r from-[#EAF4FF] to-[#EAFBF4] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#2C5F87]">
             NEET 2026 Admissions Open
           </div>
 
@@ -46,20 +46,20 @@ export default function AntigravityHero() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <button
-              className="mercury-btn relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#2F2A24] bg-[#2F2A24] px-8 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-transform duration-300 hover:-translate-y-0.5"
+              className="mercury-btn relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#1F78B4] bg-gradient-to-r from-[#1F78B4] to-[#2E9E72] px-8 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-transform duration-300 hover:-translate-y-0.5"
               style={{ fontFamily: 'Poppins, Inter, system-ui, sans-serif' }}
             >
               Book Free Counselling
             </button>
-            <button className="inline-flex items-center justify-center rounded-full border border-[#D7D1C8] bg-white px-8 py-3 text-sm font-semibold text-[#3F3B36] transition hover:border-[#2F2A24] hover:text-[#2F2A24]">
+            <button className="inline-flex items-center justify-center rounded-full border border-[#D1E0EF] bg-[#EEF6FF] px-8 py-3 text-sm font-semibold text-[#24597D] transition hover:border-[#1F78B4] hover:text-[#1F78B4]">
               View Programs
             </button>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3 text-sm text-[#595652]">
-            <span className="rounded-full border border-[#DDD7CE] bg-[#F9F7F4] px-4 py-2">Daily practice sheets</span>
-            <span className="rounded-full border border-[#DDD7CE] bg-[#F9F7F4] px-4 py-2">Weekly test analytics</span>
-            <span className="rounded-full border border-[#DDD7CE] bg-[#F9F7F4] px-4 py-2">Parent performance reports</span>
+            <span className="rounded-full border border-[#CFE0F2] bg-[#EAF4FF] px-4 py-2 text-[#2C5F87]">Daily practice sheets</span>
+            <span className="rounded-full border border-[#D5EAD4] bg-[#ECF8EC] px-4 py-2 text-[#2F7A56]">Weekly test analytics</span>
+            <span className="rounded-full border border-[#E8DBBD] bg-[#FFF7E7] px-4 py-2 text-[#8A6B2A]">Parent performance reports</span>
           </div>
         </div>
 
@@ -69,7 +69,7 @@ export default function AntigravityHero() {
           transition={{ duration: 3, ease: 'easeInOut' }}
           className="w-full rounded-[2rem] border border-[#E3DDD4] bg-[#F3F3F3] p-8 shadow-[0_8px_28px_rgba(31,31,33,0.07)] md:p-8"
         >
-          <p className="text-xs uppercase tracking-[0.24em] text-[#7A746A]">This Month at LearnPark</p>
+          <p className="text-xs uppercase tracking-[0.24em] text-[#5E6E80]">This Month at LearnPark</p>
           <div className="mt-5 grid gap-4">
             {[
               ['Next Batch', 'Starts 15 April 2026'],
@@ -90,7 +90,7 @@ export default function AntigravityHero() {
               ['12+', 'Years'],
             ].map(([value, label]) => (
               <div key={label} className="rounded-2xl border border-[#E6E1D8] bg-[#F3F3F3] px-3 py-4">
-                <div className="font-heading text-2xl font-bold text-[#6E4FD6]">{value}</div>
+                <div className="font-heading text-2xl font-bold text-[#1F78B4]">{value}</div>
                 <div className="mt-1 text-xs uppercase tracking-[0.18em] text-[#817B71]">{label}</div>
               </div>
             ))}

@@ -22,3 +22,13 @@ body {
 .font-heading {
   font-family: Poppins, Inter, system-ui, sans-serif;
 }
+
+.image-hover-rise {
+  transition: transform 320ms ease, box-shadow 320ms ease;
+  will-change: transform;
+}
+
+.image-hover-rise:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(31, 120, 180, 0.2);
+}
