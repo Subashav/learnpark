@@ -43,7 +43,7 @@ body {
   display: flex;
   gap: 1rem;
   width: max-content;
-  animation: commentsScroll 40s linear infinite;
+  animation: commentsScroll 34s linear infinite;
 }
 
 .comments-scroll-wrap:hover .comments-scroll-track {
@@ -63,7 +63,7 @@ body {
 
   .comments-scroll-track {
     gap: 0.875rem;
-    animation-duration: 44s;
+    animation-duration: 38s;
   }
 
   .comments-scroll-item {

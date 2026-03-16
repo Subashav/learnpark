@@ -93,7 +93,7 @@ export default function SiteLayout() {
         ) : null}
       </header>
 
-      <main className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-3 pb-10 pt-2 sm:px-4 md:px-8 md:pb-12 md:pt-3 xl:px-12">
+      <main className="relative z-10 mx-auto flex w-full max-w-[1520px] flex-col gap-4 px-3 pb-10 pt-2 sm:px-4 md:gap-6 md:px-8 md:pb-12 md:pt-3 lg:gap-7 lg:px-10 xl:gap-8 xl:px-14 2xl:px-16">
         <Outlet />
       </main>
 

@@ -1,5 +1,5 @@
 import AntigravityHero from '../AntigravityHero';
-import { results, testimonials } from '../data/siteContent';
+import { results, reviews } from '../data/siteContent';
 import { motion } from 'framer-motion';
 
 export default function HomePage() {
@@ -25,7 +25,7 @@ export default function HomePage() {
     <>
       <AntigravityHero />
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 md:gap-6 lg:grid-cols-2 lg:gap-7 xl:grid-cols-3 xl:gap-8">
         {[
           ['12 Years', 'of NEET coaching experience'],
           ['Daily Tests', 'for consistency and speed improvement'],
@@ -33,23 +33,23 @@ export default function HomePage() {
         ].map(([title, desc]) => (
           <article
             key={title}
-            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
+            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 lg:p-7"
           >
             <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Highlights</p>
             <h2 className="font-heading mt-3 text-xl font-bold text-[#1D1D1F] sm:text-2xl">{title}</h2>
-            <p className="mt-3 text-[#5F5B55]">{desc}</p>
+            <p className="mt-3 max-w-[32ch] leading-relaxed text-[#5F5B55]">{desc}</p>
           </article>
         ))}
       </section>
 
-      <section className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
-        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
+      <section className="grid gap-4 md:gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-7 xl:gap-8">
+        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
           <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Why parents trust us</p>
           <h2 className="font-heading mt-3 text-2xl font-bold md:text-4xl">A disciplined system, not random coaching.</h2>
-          <p className="mt-4 max-w-2xl text-[#5F5B55]">
+          <p className="mt-4 max-w-2xl leading-relaxed text-[#5F5B55]">
             Students improve because preparation is tracked every week. We focus on concept mastery, revision loops, accuracy analysis, and consistent mentor support.
           </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:gap-5 lg:gap-6">
             {[
               'Daily practice and revision sheets',
               'Weekly tests with analytics',
@@ -63,21 +63,21 @@ export default function HomePage() {
           </div>
         </article>
 
-        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
+        <article className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
           <p className="text-xs uppercase tracking-[0.24em] text-[#1F78B4]">Weekly study cycle</p>
-          <div className="mt-5 space-y-4">
+          <div className="mt-5 space-y-4 md:space-y-5 lg:space-y-6">
             {[
               ['01', 'Concept Class', 'Build chapter understanding with faculty-led teaching.'],
               ['02', 'Practice Drill', 'Solve guided questions and daily homework sheets.'],
               ['03', 'Test + Review', 'Analyze mistakes and revise weak areas with mentors.'],
             ].map(([num, title, desc]) => (
-              <div key={num} className="flex gap-4 rounded-2xl border border-[#ECE8E1] bg-[#F3F3F3] p-4">
+              <div key={num} className="flex gap-4 rounded-2xl border border-[#ECE8E1] bg-[#F3F3F3] p-4 md:p-5">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#6E4FD6] to-[#9D83F0] font-heading font-bold text-white">
                   {num}
                 </div>
                 <div>
                   <h3 className="font-heading text-lg font-semibold">{title}</h3>
-                  <p className="mt-1 text-sm text-[#5F5B55]">{desc}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#5F5B55]">{desc}</p>
                 </div>
               </div>
             ))}
@@ -85,13 +85,13 @@ export default function HomePage() {
         </article>
       </section>
 
-      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
+      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
         <p className="text-xs uppercase tracking-[0.24em] text-[#2E9E72]">Story Journey</p>
         <h2 className="font-heading mt-3 text-2xl font-bold text-[#1D1D1F] md:text-4xl">
           A clear preparation story from first test to final rank.
         </h2>
 
-        <div className="relative mt-8 pl-9 sm:pl-12 md:mt-10 md:pl-16">
+        <div className="relative mt-8 pl-9 sm:pl-12 md:mt-10 md:pl-16 lg:mt-12 lg:pl-20">
           <div className="absolute bottom-0 left-4 top-0 w-px bg-[#E6E1D8] md:left-6" />
           <motion.div
             initial={{ scaleY: 0 }}
@@ -101,7 +101,7 @@ export default function HomePage() {
             className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-[#1F78B4] to-[#2E9E72] md:left-6"
           />
 
-          <div className="space-y-6">
+          <div className="space-y-6 md:space-y-7 lg:space-y-8">
             {storySteps.map((step, index) => (
               <motion.article
                 key={step.phase}
@@ -121,7 +121,7 @@ export default function HomePage() {
                   {step.phase}
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-[#1D1D1F]">{step.title}</h3>
-                <p className="mt-3 text-[#5F5B55]">{step.text}</p>
+                <p className="mt-3 leading-relaxed text-[#5F5B55]">{step.text}</p>
 
                 <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-[#EDE8DE]">
                   <motion.div
@@ -137,19 +137,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
+        <div className="grid gap-8 md:gap-10 lg:grid-cols-[1.16fr_0.84fr] lg:items-center xl:gap-12">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[#1F78B4]">Results That Matter</p>
             <h2 className="font-heading mt-3 text-2xl font-bold leading-tight text-[#1D1D1F] md:text-4xl">
               Disciplined preparation. Real score improvement. Medical seat focus.
             </h2>
-            <p className="mt-4 max-w-2xl text-[#5F5B55]">
+            <p className="mt-4 max-w-2xl leading-relaxed text-[#5F5B55]">
               Our teaching model combines concept clarity, daily problem practice, full-length mock tests, and personal mentoring to steadily improve accuracy and speed.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 md:gap-5 lg:gap-6">
             {results.map(([value, label]) => (
               <div
                 key={label}
@@ -163,25 +163,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
+      <section className="rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-7 lg:p-8 xl:p-9">
         <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Comments</p>
         <h3 className="font-heading mt-2 text-2xl font-bold text-[#1D1D1F] md:text-3xl">What students and parents say</h3>
 
-        <div className="comments-scroll-wrap mt-6">
+        <div className="comments-scroll-wrap mt-6 lg:mt-8">
           <div className="comments-scroll-track">
-            {[...testimonials, ...testimonials].map(([title, quote, image], index) => (
+            {[...reviews, ...reviews].map((review, index) => (
               <article
-                key={`${title}-${index}`}
+                key={`${review.name}-${index}`}
                 className="comments-scroll-item rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-6 shadow-[0_8px_24px_rgba(31,31,33,0.05)]"
               >
-                <img
-                  src={image}
-                  alt={title}
-                  className="image-hover-rise mb-4 h-40 w-full rounded-2xl border border-[#ECE8E1] object-cover sm:h-44"
-                  loading="lazy"
-                />
-                <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">{title}</p>
-                <p className="mt-4 text-base leading-7 text-[#5F5B55] sm:text-lg sm:leading-8">{quote}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[#1F78B4]">{review.name}</p>
+                  <p className="text-sm font-semibold text-[#2E9E72]">{review.rating.toFixed(1)}/5</p>
+                </div>
+
+                <div
+                  className="relative mt-3 w-[96px] text-[1rem] leading-none text-[#E3B84B]"
+                  aria-label={`${review.rating.toFixed(1)} out of 5 stars`}
+                >
+                  <span className="opacity-30">★★★★★</span>
+                  <span
+                    className="absolute left-0 top-0 overflow-hidden whitespace-nowrap"
+                    style={{ width: `${(review.rating / 5) * 100}%` }}
+                  >
+                    ★★★★★
+                  </span>
+                </div>
+
+                <p className="mt-4 text-base leading-7 text-[#5F5B55] sm:text-lg sm:leading-8">{review.comment}</p>
               </article>
             ))}
           </div>
