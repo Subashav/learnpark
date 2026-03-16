@@ -87,50 +87,45 @@ export default function HomePage() {
         className="rounded-[2rem] border border-[#B8DCF2] bg-[#EAF5FD] p-5 shadow-[0_8px_28px_rgba(31,120,180,0.08)] sm:p-6 md:p-8"
       >
         <p className="text-xs uppercase tracking-[0.18em] text-[#5E7E9A] sm:tracking-[0.24em]">This Month at LearnPark</p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-3">
-          {[
-            ['Next Batch', 'Starts 15 April 2026'],
-            ['Mode', 'Classroom + Guided Practice'],
-            ['Focus', 'Biology, Chemistry, Physics mastery'],
-          ].map(([label, value]) => (
-            <div key={label} className="rounded-2xl border border-[#B8DCF2] bg-[#F0F9FF] p-4">
-              <p className="text-[0.65rem] uppercase tracking-[0.14em] text-[#5E7E9A] sm:text-xs sm:tracking-[0.18em]">{label}</p>
-              <p className="mt-2 font-heading text-lg font-semibold text-[#1A3D5C] sm:text-xl">{value}</p>
+        <div className="mt-5 grid gap-5 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+          <div className="rounded-2xl border border-[#C8E4F5] bg-[#F4FAFF] p-4 sm:p-5">
+            <div className="space-y-3">
+              {[
+                ['Next Batch', 'Starts 15 April 2026'],
+                ['Mode', 'Classroom + Guided Practice'],
+                ['Focus', 'Biology, Chemistry, Physics mastery'],
+              ].map(([label, value]) => (
+                <div key={label} className="border-b border-[#D7E9F6] pb-3 last:border-b-0 last:pb-0">
+                  <p className="text-[0.65rem] uppercase tracking-[0.14em] text-[#5E7E9A] sm:text-xs sm:tracking-[0.18em]">{label}</p>
+                  <p className="mt-1 font-heading text-lg font-semibold text-[#1A3D5C] sm:text-xl">{value}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="mt-6 grid grid-cols-2 gap-2 text-center sm:grid-cols-3 sm:gap-3 md:grid-cols-6">
-          {[
-            ['1500+', 'Students'],
-            ['92%', 'Success'],
-            ['12+', 'Years'],
-            ['Daily', 'Practice'],
-            ['Tamil', '& English'],
-            ['1:1', 'Mentoring'],
-          ].map(([value, label]) => (
-            <div key={label} className="min-w-0 rounded-2xl border border-[#B8DCF2] bg-[#F0F9FF] px-2 py-3 sm:px-3 sm:py-4">
-              <div className="font-heading text-[clamp(1.2rem,5vw,1.7rem)] font-bold leading-none text-[#1F78B4]">{value}</div>
-              <div className="mt-1 text-[0.62rem] uppercase tracking-[0.12em] text-[#5E7E9A] sm:text-xs sm:tracking-[0.18em]">{label}</div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {['12 Years of NEET coaching', 'Daily Tests', 'Parent Updates'].map((item) => (
+                <span key={item} className="rounded-full border border-[#C8E4F5] bg-white px-3 py-1.5 text-xs text-[#2D5E7E]">
+                  {item}
+                </span>
+              ))}
             </div>
-          ))}
-        </div>
-      </motion.section>
+          </div>
 
-      <motion.section {...revealUp} className="grid gap-4 md:gap-6 lg:grid-cols-2 lg:gap-7 xl:grid-cols-3 xl:gap-8">
-        {[
-          ['12 Years', 'of NEET coaching experience'],
-          ['Daily Tests', 'for consistency and speed improvement'],
-          ['Parent Updates', 'through regular academic performance reports'],
-        ].map(([title, desc]) => (
-          <article
-            key={title}
-            className="border-l-4 border-[#1F78B4] px-1 py-2 sm:px-2"
-          >
-            <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Highlights</p>
-            <h2 className="font-heading mt-3 text-xl font-bold text-[#1D1D1F] sm:text-2xl">{title}</h2>
-            <p className="mt-3 max-w-[32ch] leading-relaxed text-[#5F5B55]">{desc}</p>
-          </article>
-        ))}
+          <div className="grid grid-cols-2 gap-2 text-center sm:grid-cols-3 lg:grid-cols-2">
+            {[
+              ['1500+', 'Students'],
+              ['92%', 'Success'],
+              ['12+', 'Years'],
+              ['Daily', 'Practice'],
+              ['Tamil', '& English'],
+              ['1:1', 'Mentoring'],
+            ].map(([value, label]) => (
+              <div key={label} className="min-w-0 rounded-2xl border border-[#B8DCF2] bg-white px-2 py-3 sm:px-3 sm:py-4">
+                <div className="font-heading text-[clamp(1.15rem,4vw,1.55rem)] font-bold leading-none text-[#1F78B4]">{value}</div>
+                <div className="mt-1 text-[0.6rem] uppercase tracking-[0.12em] text-[#5E7E9A] sm:text-xs sm:tracking-[0.18em]">{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </motion.section>
 
       <motion.section {...revealUp} className="grid gap-4 md:gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-7 xl:gap-8">
