@@ -33,17 +33,17 @@ export default function AdmissionsPage() {
             Secure Your Seat in the NEET 2026 Batch.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/85">
-            Limited seats per batch. Personal mentorship. Proven track record. Join LearnPark NEET Academy today.
+            Limited seats per batch. Personal mentorship. Proven track record. Join Learn Park Academy today.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
               href="tel:+919894849778"
               className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
             >
-              Call Us: 098948 49778
+              Call Us: +91 98948 49778
             </a>
             <a
-              href="https://wa.me/919894849778"
+              href="https://wa.me/919487801778"
               target="_blank"
               rel="noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
@@ -98,11 +98,11 @@ export default function AdmissionsPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:max-w-lg">
               <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F59E0B]">Direct Call</p>
-                <a href="tel:+919894849778" className="mt-2 block font-heading text-xl font-bold text-white hover:text-[#F59E0B]">098948 49778</a>
+                <a href="tel:+919894849778" className="mt-2 block font-heading text-xl font-bold text-white hover:text-[#F59E0B]">+91 98948 49778 / 94878 01778</a>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#06B6D4]">Email</p>
-                <a href="mailto:info@learnparkacademy.in" className="mt-2 block font-heading text-base font-bold text-white hover:text-[#06B6D4]">info@learnparkacademy.in</a>
+                <a href="mailto:learnpark.edu@gmail.com" className="mt-2 block font-heading text-base font-bold text-white hover:text-[#06B6D4]">learnpark.edu@gmail.com</a>
               </div>
             </div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -113,7 +113,7 @@ export default function AdmissionsPage() {
                 Call to Enroll
               </a>
               <a
-                href="https://wa.me/919894849778"
+                href="https://wa.me/919487801778"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"

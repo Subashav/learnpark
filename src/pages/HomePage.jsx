@@ -27,13 +27,13 @@ export default function HomePage() {
   const homeSeoSchema = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'LearnPark NEET Academy',
+    name: 'Learn Park Academy',
     description:
-      'LearnPark NEET Academy delivers structured NEET preparation, expert faculty support, weekly testing, and proven medical entrance results.',
-    areaServed: 'Erode, Tamil Nadu 638004, India',
-    address: '41/1, Nalli Hospital Rd, opp. Royal Theatre, Municipal Colony, Annamalai Layout, Erode, Tamil Nadu 638004',
+      'Learn Park Academy in Erode delivers NEET, IIT-JEE, Foundation coaching, software training, and placement training with experienced faculty and structured student support.',
+    areaServed: 'Erode, Tamil Nadu 638001, India',
+    address: '41, Nalli Hospital Road, Opp Royal Theatre, Erode - 638001, Tamil Nadu, India',
     telephone: '+91-98948-49778',
-    educationalCredentialAwarded: 'NEET Entrance Preparation',
+    educationalCredentialAwarded: 'NEET, IIT-JEE, Foundation, Software & Placement Training',
     url: 'https://learnpark.vercel.app/',
   };
 
@@ -293,7 +293,9 @@ export default function HomePage() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {trainerSupport.map((item) => (
               <article key={item.title} className="rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm">
-                <img src={item.image} alt={item.title} className="h-44 w-full rounded-xl object-cover" loading="lazy" />
+                <div className="h-56 overflow-hidden rounded-xl bg-[#F3F4F6] sm:h-60">
+                  <img src={item.image} alt={item.title} className="h-full w-full object-contain object-center" loading="lazy" />
+                </div>
                 <h3 className="font-heading mt-4 text-lg font-bold text-[#111827]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-[#6B7280]">{item.desc}</p>
               </article>

@@ -74,7 +74,7 @@ export default function SiteLayout() {
           <NavLink to="/" className="inline-flex items-center">
             <img
               src={logoImage}
-              alt="LearnPark NEET Academy"
+              alt="Learn Park Academy"
               className="h-14 w-auto object-contain"
             />
           </NavLink>
@@ -189,18 +189,18 @@ export default function SiteLayout() {
       <footer className="border-t border-[#E2E8F0] bg-white">
         <div className="mx-auto grid w-full max-w-[1380px] gap-8 px-4 py-8 sm:px-5 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-12 xl:px-8">
           <div>
-            <p className="font-heading text-2xl font-bold text-[#0F172A]">LearnPark NEET Academy</p>
+            <p className="font-heading text-2xl font-bold text-[#0F172A]">Learn Park Academy</p>
             <p className="mt-4 max-w-xl leading-8 text-[#475569]">
-              A professional NEET coaching institute focused on academic discipline, expert mentoring, performance analytics, and trusted preparation systems for students and parents.
+              Established in 2018 in Erode, Learn Park Academy delivers NEET, IIT-JEE, Foundation coaching, software application training, and placement preparation with a student-centric approach.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium text-[#2563EB]">
-              <span className="rounded-full border border-[#DBEAFE] bg-[#EFF6FF] px-3 py-1.5">NEET Focused</span>
-              <span className="rounded-full border border-[#DCFCE7] bg-[#F0FDF4] px-3 py-1.5 text-[#16A34A]">Structured Mentoring</span>
-              <span className="rounded-full border border-[#E0F2FE] bg-[#ECFEFF] px-3 py-1.5 text-[#0891B2]">Parent Trust</span>
+              <span className="rounded-full border border-[#DBEAFE] bg-[#EFF6FF] px-3 py-1.5">NEET | IIT-JEE | Foundation</span>
+              <span className="rounded-full border border-[#DCFCE7] bg-[#F0FDF4] px-3 py-1.5 text-[#16A34A]">Software Training Division</span>
+              <span className="rounded-full border border-[#E0F2FE] bg-[#ECFEFF] px-3 py-1.5 text-[#0891B2]">Student-Centric & Career Focused</span>
             </div>
             <div className="mt-6 overflow-hidden rounded-xl border border-[#E2E8F0] shadow-[0_4px_12px_rgba(15,23,42,0.06)]">
               <iframe
-                title="LearnPark NEET Academy Location"
+                title="Learn Park Academy Location"
                 src="https://maps.google.com/maps?q=11.3466713,77.7164288&z=17&output=embed"
                 width="100%"
                 height="220"
@@ -229,11 +229,20 @@ export default function SiteLayout() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Contact</p>
               <div className="mt-4 flex flex-col gap-3 text-sm leading-7 text-[#475569]">
-                <span>Phone: 098948 49778</span>
-                <span>Email: info@learnparkacademy.in</span>
-                <span>Address: 41/1, Nalli Hospital Rd, opp. Royal Theatre, Municipal Colony, Annamalai Layout, Erode, Tamil Nadu 638004</span>
-                <a href="https://maps.google.com/?q=41/1+Nalli+Hospital+Rd+Erode+Tamil+Nadu+638004" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                <span>Phone: +91 98948 49778 / 94878 01778</span>
+                <span>Email: learnpark.edu@gmail.com</span>
+                <span>Address: 41, Nalli Hospital Road, Opp Royal Theatre, Erode - 638001, TN, India</span>
+                <a href="https://maps.google.com/?q=41+Nalli+Hospital+Road+Opp+Royal+Theatre+Erode+638001" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
                   Open in Google Maps
+                </a>
+                <a href="http://www.youtube.com/@learnparkneet1269" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                  YouTube
+                </a>
+                <a href="https://www.facebook.com/learnpark.neet.1/" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                  Facebook
+                </a>
+                <a href="https://www.instagram.com/learnparkacademy/" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                  Instagram
                 </a>
               </div>
             </div>
@@ -242,8 +251,8 @@ export default function SiteLayout() {
 
         <div className="border-t border-[#E2E8F0]">
           <div className="mx-auto flex w-full max-w-[1380px] flex-col gap-2 px-4 py-4 text-sm text-[#64748B] sm:px-5 md:flex-row md:items-center md:justify-between md:px-6 xl:px-8">
-            <p>© 2026 LearnPark NEET Academy. All rights reserved.</p>
-            <p>Built for trust, clarity, and serious NEET preparation.</p>
+            <p>© 2026 Learn Park Academy. All rights reserved.</p>
+            <p>Shaping Future Doctors & Engineers.</p>
           </div>
         </div>
       </footer>
