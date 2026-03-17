@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { programs, testimonials } from '../data/siteContent';
 import drImage from '../assets/dr image.png';
 import drImageNew from '../assets/dr image new.png';
+import trainerImageThree from '../assets/hf.png';
 
 export default function HomePage() {
   const heroImages = [drImage, drImageNew];
@@ -50,9 +51,21 @@ export default function HomePage() {
   const heroBadges = ['500+ Selections', 'AIR 120', '95% Parent Satisfaction'];
   const featuredPrograms = programs.slice(0, 3);
   const trainerSupport = [
-    ['Daily Doubt-Clearing Support', 'Topic-wise and question-wise doubt solving with dedicated subject trainers.'],
-    ['Personal Mentorship Reviews', 'Weekly performance tracking, correction plans, and focused intervention support.'],
-    ['Structured Test Analysis', 'Chapter tests, cumulative exams, and mock analytics with improvement strategy.'],
+    {
+      title: 'Daily Doubt-Clearing Support',
+      desc: 'Topic-wise and question-wise doubt solving with dedicated subject trainers.',
+      image: drImage,
+    },
+    {
+      title: 'Personal Mentorship Reviews',
+      desc: 'Weekly performance tracking, correction plans, and focused intervention support.',
+      image: drImageNew,
+    },
+    {
+      title: 'Structured Test Analysis',
+      desc: 'Chapter tests, cumulative exams, and mock analytics with improvement strategy.',
+      image: trainerImageThree,
+    },
   ];
 
   return (
@@ -276,10 +289,11 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {trainerSupport.map(([title, desc]) => (
-              <article key={title} className="rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm">
-                <h3 className="font-heading text-lg font-bold text-[#111827]">{title}</h3>
-                <p className="mt-2 text-sm leading-7 text-[#6B7280]">{desc}</p>
+            {trainerSupport.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm">
+                <img src={item.image} alt={item.title} className="h-44 w-full rounded-xl object-cover" loading="lazy" />
+                <h3 className="font-heading mt-4 text-lg font-bold text-[#111827]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[#6B7280]">{item.desc}</p>
               </article>
             ))}
           </div>
