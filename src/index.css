@@ -171,6 +171,7 @@ body {
   white-space: nowrap;
   transition: opacity 220ms ease, transform 220ms ease;
   z-index: 30;
+  display: none;
 }
 
 .hover-pop::after {
@@ -185,6 +186,7 @@ body {
   opacity: 0;
   transition: opacity 220ms ease;
   z-index: 30;
+  display: none;
 }
 
 .hover-pop:hover::before,
