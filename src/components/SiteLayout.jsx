@@ -1,16 +1,26 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import logoImage from '../assets/hero.png';
+import crashPostImg from '../assets/crash post .jpg.jpeg';
+import erodeCCImg from '../assets/erode cc 26 a.jpg.jpeg';
+
+const promoBanners = [
+  { src: crashPostImg, alt: 'NEET Crash Course Banner' },
+  { src: erodeCCImg, alt: 'LearnPark Erode 2026 Admissions Banner' },
+];
 
 const navItems = [
   { to: '/', label: 'Home' },
   { to: '/programs', label: 'Programs' },
+  { to: '/know-us', label: 'Know Us' },
   { to: '/faculty', label: 'Faculty' },
   { to: '/admissions', label: 'Admissions' },
 ];
 
 export default function SiteLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPromoVisible, setIsPromoVisible] = useState(true);
+  const [promoIndex, setPromoIndex] = useState(0);
   const location = useLocation();
 
   const footerColumns = [
@@ -44,6 +54,18 @@ export default function SiteLayout() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMenuOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (!isPromoVisible) {
+      return undefined;
+    }
+
+    const promoTimer = setInterval(() => {
+      setPromoIndex((idx) => (idx + 1) % promoBanners.length);
+    }, 60000);
+
+    return () => clearInterval(promoTimer);
+  }, [isPromoVisible]);
 
   return (
     <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A]">
@@ -124,6 +146,28 @@ export default function SiteLayout() {
       <main className="relative z-10 mx-auto flex w-full max-w-[1380px] flex-col gap-6 px-4 pb-24 pt-4 sm:px-5 sm:pt-6 md:gap-10 md:px-6 md:pb-16 md:pt-8 xl:px-8">
         <Outlet />
       </main>
+
+      {isPromoVisible ? (
+        <div className="fixed bottom-20 right-4 z-50 w-[min(92vw,360px)] rounded-2xl border border-[#E5E7EB] bg-white p-2.5 shadow-[0_16px_40px_rgba(15,23,42,0.22)] md:bottom-4 md:right-6">
+          <button
+            type="button"
+            onClick={() => setIsPromoVisible(false)}
+            className="absolute -right-2 -top-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#111827] text-xs font-bold text-white"
+            aria-label="Close promotional banner"
+          >
+            X
+          </button>
+          <p className="px-1 pb-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#4F46E5]">Latest Program Updates</p>
+          <Link to="/programs" className="block overflow-hidden rounded-xl border border-[#E5E7EB]">
+            <img
+              src={promoBanners[promoIndex].src}
+              alt={promoBanners[promoIndex].alt}
+              className="h-auto w-full object-contain"
+              loading="eager"
+            />
+          </Link>
+        </div>
+      ) : null}
 
       <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-[#E5E7EB] bg-white/95 px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm md:hidden">
         <div className="flex gap-3">
