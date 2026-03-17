@@ -1,11 +1,21 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { faculty, programs, testimonials } from '../data/siteContent';
 import girlTwo from '../assets/girl 2.png';
 import boyOne from '../assets/boy 1.png';
 import drImage from '../assets/dr image.png';
+import drImageNew from '../assets/dr image new.png';
 
 export default function HomePage() {
+  const heroImages = [drImage, drImageNew];
+  const [heroIdx, setHeroIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => setHeroIdx((i) => (i + 1) % 2), 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   const reveal = {
     initial: { opacity: 0, y: 34 },
     whileInView: { opacity: 1, y: 0 },
@@ -93,7 +103,21 @@ export default function HomePage() {
                 <p className="font-heading text-lg font-bold text-[#06B6D4]">500+</p>
               </div>
               <div className="overflow-hidden rounded-[2rem] border border-white/35 bg-white/10 p-3 backdrop-blur-sm">
-                <img src={drImage} alt="NEET student achiever" className="h-[420px] w-full rounded-[1.5rem] object-cover object-top" loading="eager" />
+                <div className="relative h-[420px] w-full rounded-[1.5rem] overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={heroImages[heroIdx]}
+                      src={heroImages[heroIdx]}
+                      alt="NEET student achiever"
+                      className="absolute inset-0 h-full w-full rounded-[1.5rem] object-cover object-top"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8 }}
+                      loading="eager"
+                    />
+                  </AnimatePresence>
+                </div>
               </div>
             </motion.div>
           </div>
