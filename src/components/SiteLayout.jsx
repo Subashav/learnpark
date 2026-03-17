@@ -166,6 +166,23 @@ export default function SiteLayout() {
             </div>
           </div>
         </div>
+
+        <div className="mx-auto w-full max-w-[1380px] px-4 pb-8 sm:px-5 md:px-6 xl:px-8">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Find Us</p>
+          <div className="overflow-hidden rounded-2xl border border-[#E2E8F0] shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+            <iframe
+              title="LearnPark NEET Academy Location"
+              src="https://maps.google.com/maps?q=11.3466713,77.7164288&z=17&output=embed"
+              width="100%"
+              height="320"
+              style={{ border: 0, display: 'block' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+
         <div className="border-t border-[#E2E8F0]">
           <div className="mx-auto flex w-full max-w-[1380px] flex-col gap-2 px-4 py-4 text-sm text-[#64748B] sm:px-5 md:flex-row md:items-center md:justify-between md:px-6 xl:px-8">
             <p>© 2026 LearnPark NEET Academy. All rights reserved.</p>
