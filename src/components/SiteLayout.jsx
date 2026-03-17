@@ -211,7 +211,7 @@ export default function SiteLayout() {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">{column.title}</p>
@@ -234,6 +234,12 @@ export default function SiteLayout() {
                 <a href="https://maps.google.com/?q=41+Nalli+Hospital+Road+Opp+Royal+Theatre+Erode+638001" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
                   Open in Google Maps
                 </a>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Connect</p>
+              <div className="mt-4 flex flex-col gap-3 text-sm leading-7 text-[#475569]">
                 <a href="http://www.youtube.com/@learnparkneet1269" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
                   YouTube
                 </a>
