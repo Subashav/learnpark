@@ -162,24 +162,20 @@ export default function SiteLayout() {
                 <a href="https://maps.google.com/?q=41/1+Nalli+Hospital+Rd+Erode+Tamil+Nadu+638004" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
                   Open in Google Maps
                 </a>
+                <div className="overflow-hidden rounded-xl border border-[#E2E8F0] shadow-[0_4px_12px_rgba(15,23,42,0.06)]">
+                  <iframe
+                    title="LearnPark NEET Academy Location"
+                    src="https://maps.google.com/maps?q=11.3466713,77.7164288&z=17&output=embed"
+                    width="100%"
+                    height="160"
+                    style={{ border: 0, display: 'block' }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="mx-auto w-full max-w-[1380px] px-4 pb-8 sm:px-5 md:px-6 xl:px-8">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Find Us</p>
-          <div className="overflow-hidden rounded-2xl border border-[#E2E8F0] shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
-            <iframe
-              title="LearnPark NEET Academy Location"
-              src="https://maps.google.com/maps?q=11.3466713,77.7164288&z=17&output=embed"
-              width="100%"
-              height="320"
-              style={{ border: 0, display: 'block' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
           </div>
         </div>
 
