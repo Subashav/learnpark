@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -119,7 +119,21 @@ body {
 }
 
 .font-heading {
-  font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+  font-family: 'Sora', Inter, system-ui, sans-serif;
+}
+
+.testimonial-rail {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79, 70, 229, 0.35) transparent;
+}
+
+.testimonial-rail::-webkit-scrollbar {
+  height: 7px;
+}
+
+.testimonial-rail::-webkit-scrollbar-thumb {
+  background: rgba(79, 70, 229, 0.35);
+  border-radius: 999px;
 }
 
 .image-hover-rise {
