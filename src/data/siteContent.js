@@ -1,3 +1,5 @@
+import repeaterProgramImage from '../assets/Course_Banners_NEET_Repeaters.webp';
+
 export const programs = [
   {
     title: 'NEET Foundation Program',
@@ -36,8 +38,7 @@ export const programs = [
     targetClass: 'Repeaters',
     duration: '1 Year',
     mode: 'Intensive Offline',
-    image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80',
+    image: repeaterProgramImage,
   },
 ];
 
