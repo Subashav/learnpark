@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import erodeCCImg from '../assets/erode cc 26 a.jpg.jpeg';
 
 export default function AdmissionsPage() {
   const reveal = {
@@ -54,19 +53,6 @@ export default function AdmissionsPage() {
           </div>
         </motion.div>
       </section>
-
-      <motion.section {...reveal} className="py-8">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-lg">
-            <img
-              src={erodeCCImg}
-              alt="LearnPark NEET Academy Erode — 2026 Admissions"
-              className="w-full object-contain"
-              loading="eager"
-            />
-          </div>
-        </div>
-      </motion.section>
 
       <motion.section {...reveal} className="py-16">
         <div className="max-w-6xl mx-auto px-4">
