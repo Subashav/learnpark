@@ -176,12 +176,12 @@ export default function HomePage() {
 
       <motion.section {...reveal} className="section-reveal py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-end justify-between gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Courses</p>
               <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Choose the right NEET program.</h2>
             </div>
-            <Link to="/programs" className="hover-pop text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]" data-pop="See Programs">View all</Link>
+            <Link to="/programs" className="hover-pop self-start whitespace-nowrap text-base font-semibold text-[#4F46E5] hover:text-[#4338CA] sm:self-auto sm:text-sm" data-pop="See Programs">View all</Link>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">

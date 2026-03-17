@@ -66,6 +66,29 @@ export default function SiteLayout() {
     return () => clearInterval(promoTimer);
   }, [isPromoVisible]);
 
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll('.section-reveal'));
+    if (!sections.length) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14, rootMargin: '0px 0px -8% 0px' },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
   return (
     <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <header className="sticky top-0 z-30 border-b border-[#E2E8F0] bg-white/90 backdrop-blur-md">

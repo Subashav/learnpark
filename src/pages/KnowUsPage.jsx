@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import lnpk4 from '../assets/LNPK (4).jpg.jpeg';
 import group1 from '../assets/group 1.JPG.jpeg';
 import group2 from '../assets/group 2.JPG.jpeg';
@@ -22,6 +23,8 @@ const galleryImages = [
 ];
 
 export default function KnowUsPage() {
+  const [activeImage, setActiveImage] = useState(null);
+
   const gridReveal = {
     hidden: { opacity: 0, y: 20 },
     show: {
@@ -46,6 +49,36 @@ export default function KnowUsPage() {
 
   return (
     <>
+      <AnimatePresence>
+        {activeImage ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4"
+            onClick={() => setActiveImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-full max-w-5xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setActiveImage(null)}
+                className="absolute -top-10 right-0 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold text-white"
+              >
+                Close
+              </button>
+              <img src={activeImage.src} alt={activeImage.alt} className="max-h-[88vh] w-full rounded-2xl object-contain" />
+            </motion.div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+
       <motion.section
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -66,13 +99,15 @@ export default function KnowUsPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((image, idx) => (
-              <motion.article
+              <motion.button
                 key={image.alt}
+                type="button"
                 variants={cardReveal}
                 whileHover={{ y: -8, scale: 1.015 }}
                 transition={{ duration: 0.28 }}
                 className={`hl-card hover-pop group relative overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm hover:shadow-xl ${idx === 0 ? 'sm:col-span-2 lg:col-span-3' : ''}`}
                 data-pop="View Highlight"
+                onClick={() => setActiveImage(image)}
               >
                 <img
                   src={image.src}
@@ -88,7 +123,7 @@ export default function KnowUsPage() {
                 <div className="pointer-events-none absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#111827] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   LearnPark Moments
                 </div>
-              </motion.article>
+              </motion.button>
             ))}
           </div>
         </div>

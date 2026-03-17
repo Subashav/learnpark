@@ -103,7 +103,12 @@ export default function ProgramsPage() {
                 className="hl-card hover-pop rounded-2xl border border-[#E5E7EB] bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
                 data-pop="Program Details"
               >
-                <img src={program.image} alt={program.title} className="h-48 w-full rounded-t-2xl object-cover" loading="lazy" />
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  className={`h-48 w-full rounded-t-2xl ${program.title === 'NEET Repeaters Batch' ? 'object-contain bg-[#F8FAFC]' : 'object-cover'}`}
+                  loading="lazy"
+                />
                 <div className="p-5">
                   <div className="flex flex-wrap gap-2 text-xs">
                     <span className="rounded-full bg-[#EEF2FF] px-3 py-1 font-semibold text-[#4F46E5]">{program.targetClass}</span>
