@@ -169,6 +169,65 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      <motion.section {...reveal} className="bg-[#F9FAFB] py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">What We Offer</p>
+          <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Complete NEET preparation with exclusive benefits.</h2>
+          
+          <div className="mt-10 grid gap-8 lg:grid-cols-3">
+            <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#06B6D4]">Tamil Medium Support</p>
+              <ul className="mt-4 space-y-3">
+                {[
+                  'NCERT Based Tamil Books',
+                  'Tamil Chapter-wise Tests',
+                  'Tamil Mock Tests',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-4 w-4 flex-none items-center justify-center rounded-full bg-[#06B6D4] text-xs font-bold text-white">✓</span>
+                    <span className="text-[15px] leading-6 text-[#374151]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#4F46E5]">Academic Excellence</p>
+              <ul className="mt-4 space-y-3">
+                {[
+                  '7 Days Intensive Classes & Daily Practice Tests',
+                  'Chapter-wise, Cumulative & Mock Exams',
+                  'Study Monitoring till 10 PM & Early Morning Tests',
+                  'Budget-Friendly Fees with Easy Installments',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-4 w-4 flex-none items-center justify-center rounded-full bg-[#4F46E5] text-xs font-bold text-white">✓</span>
+                    <span className="text-[15px] leading-6 text-[#374151]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#F59E0B]">Premium Facilities</p>
+              <ul className="mt-4 space-y-3">
+                {[
+                  'Comfortable Hostel Facilities',
+                  'Up to 90% Offer for Govt. School (7.5 Quota)',
+                  'Student Referral Benefits',
+                  'Parent-Friendly Support System',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-4 w-4 flex-none items-center justify-center rounded-full bg-[#F59E0B] text-xs font-bold text-white">✓</span>
+                    <span className="text-[15px] leading-6 text-[#374151]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </div>
+      </motion.section>
+
       <motion.section {...reveal} className="bg-[#EEF2FF] py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Testimonials</p>
