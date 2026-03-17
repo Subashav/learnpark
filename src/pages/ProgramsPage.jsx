@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { programs } from '../data/siteContent';
+import crashPostImg from '../assets/crash post .jpg.jpeg';
 
 export default function ProgramsPage() {
   const reveal = {
@@ -56,6 +57,19 @@ export default function ProgramsPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section {...reveal} className="py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-lg">
+            <img
+              src={crashPostImg}
+              alt="NEET Crash Course 2026 — LearnPark Academy"
+              className="w-full object-contain"
+              loading="lazy"
+            />
           </div>
         </div>
       </motion.section>
