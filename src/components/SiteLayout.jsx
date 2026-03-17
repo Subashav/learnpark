@@ -148,7 +148,7 @@ export default function SiteLayout() {
       </main>
 
       {isPromoVisible ? (
-        <div className="fixed bottom-4 right-6 z-50 hidden w-[min(92vw,360px)] rounded-2xl border border-[#E5E7EB] bg-white p-2.5 shadow-[0_16px_40px_rgba(15,23,42,0.22)] sm:block">
+        <div className="fixed bottom-20 left-2 right-2 z-50 w-auto max-w-[420px] rounded-2xl border border-[#E5E7EB] bg-white p-2.5 shadow-[0_16px_40px_rgba(15,23,42,0.22)] sm:bottom-4 sm:left-auto sm:right-6 sm:w-[min(92vw,360px)]">
           <button
             type="button"
             onClick={() => setIsPromoVisible(false)}
