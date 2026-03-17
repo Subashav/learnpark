@@ -26,7 +26,7 @@ export default function AdmissionsPage() {
 
   return (
     <>
-      <section className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#4F46E5] via-[#4338CA] to-[#06B6D4] text-white">
+      <section className="section-reveal overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#4F46E5] via-[#4338CA] to-[#06B6D4] text-white">
         <motion.div {...reveal} className="max-w-6xl mx-auto px-4 py-16 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/80">Admissions Open — 2026 Batch</p>
           <h1 className="font-heading mt-4 text-3xl font-bold leading-tight sm:text-5xl">
@@ -38,7 +38,8 @@ export default function AdmissionsPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
               href="tel:+919894849778"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+              className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+              data-pop="Call Now"
             >
               Call Us: +91 98948 49778
             </a>
@@ -46,7 +47,8 @@ export default function AdmissionsPage() {
               href="https://wa.me/919487801778"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+              className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+              data-pop="WhatsApp"
             >
               WhatsApp Inquiry
             </a>
@@ -54,13 +56,13 @@ export default function AdmissionsPage() {
         </motion.div>
       </section>
 
-      <motion.section {...reveal} className="py-16">
+      <motion.section {...reveal} className="section-reveal py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">How It Works</p>
           <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Simple 4-step admission process.</h2>
           <ol className="mt-10 space-y-6">
             {steps.map(([num, title, desc]) => (
-              <li key={num} className="flex gap-5">
+              <li key={num} className="hl-card hover-pop flex gap-5 rounded-xl p-3" data-pop="Step">
                 <span className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[#4F46E5] font-heading text-sm font-bold text-white">{num}</span>
                 <div>
                   <p className="font-heading text-lg font-bold text-[#111827]">{title}</p>
@@ -72,7 +74,7 @@ export default function AdmissionsPage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="bg-[#F9FAFB] py-16">
+      <motion.section {...reveal} className="section-reveal bg-[#F9FAFB] py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">What's Included</p>
           <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Everything you need to crack NEET.</h2>
@@ -87,7 +89,7 @@ export default function AdmissionsPage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="pb-16">
+      <motion.section {...reveal} className="section-reveal pb-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="rounded-2xl bg-[#111827] px-6 py-10 text-white sm:px-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#F59E0B]">Limited Seats Available</p>
@@ -96,11 +98,11 @@ export default function AdmissionsPage() {
               Call us directly or send a WhatsApp message. Our team will guide you through the batch, fees, and schedule.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:max-w-lg">
-              <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div className="hl-card hover-pop rounded-xl border border-white/10 bg-white/5 p-4" data-pop="Contact">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F59E0B]">Direct Call</p>
                 <a href="tel:+919894849778" className="mt-2 block font-heading text-xl font-bold text-white hover:text-[#F59E0B]">+91 98948 49778 / 94878 01778</a>
               </div>
-              <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div className="hl-card hover-pop rounded-xl border border-white/10 bg-white/5 p-4" data-pop="Contact">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#06B6D4]">Email</p>
                 <a href="mailto:learnpark.edu@gmail.com" className="mt-2 block font-heading text-base font-bold text-white hover:text-[#06B6D4]">learnpark.edu@gmail.com</a>
               </div>
@@ -108,7 +110,8 @@ export default function AdmissionsPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href="tel:+919894849778"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                data-pop="Call Now"
               >
                 Call to Enroll
               </a>
@@ -116,7 +119,8 @@ export default function AdmissionsPage() {
                 href="https://wa.me/919487801778"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                data-pop="WhatsApp"
               >
                 WhatsApp Us
               </a>

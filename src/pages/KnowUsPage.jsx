@@ -51,7 +51,7 @@ export default function KnowUsPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6 }}
-        className="py-12"
+        className="section-reveal py-12"
       >
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Know Us</p>
@@ -62,7 +62,7 @@ export default function KnowUsPage() {
         </div>
       </motion.section>
 
-      <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={gridReveal} className="pb-16">
+      <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={gridReveal} className="section-reveal pb-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((image, idx) => (
@@ -71,7 +71,8 @@ export default function KnowUsPage() {
                 variants={cardReveal}
                 whileHover={{ y: -8, scale: 1.015 }}
                 transition={{ duration: 0.28 }}
-                className={`group relative overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm hover:shadow-xl ${idx === 0 ? 'sm:col-span-2 lg:col-span-3' : ''}`}
+                className={`hl-card hover-pop group relative overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm hover:shadow-xl ${idx === 0 ? 'sm:col-span-2 lg:col-span-3' : ''}`}
+                data-pop="View Highlight"
               >
                 <img
                   src={image.src}

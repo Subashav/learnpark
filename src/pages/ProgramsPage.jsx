@@ -55,7 +55,7 @@ export default function ProgramsPage() {
           </motion.div>
         )}
       </AnimatePresence>
-      <motion.section {...reveal} className="py-8">
+      <motion.section {...reveal} className="section-reveal py-8">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5] mb-4">Promotions &amp; Announcements</p>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -64,7 +64,8 @@ export default function ProgramsPage() {
                 key={banner.alt}
                 type="button"
                 onClick={() => setLightbox(banner)}
-                className="group relative overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-md transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none"
+                className="hover-pop group relative overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-md transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none"
+                data-pop="Open Banner"
               >
                 <img
                   src={banner.src}
@@ -83,7 +84,7 @@ export default function ProgramsPage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="py-12">
+      <motion.section {...reveal} className="section-reveal py-12">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Programs</p>
           <h1 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Choose the right NEET preparation path.</h1>
@@ -93,13 +94,14 @@ export default function ProgramsPage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="bg-[#F9FAFB] py-16">
+      <motion.section {...reveal} className="section-reveal bg-[#F9FAFB] py-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid gap-6 md:grid-cols-2">
             {programs.map((program) => (
               <article
                 key={program.title}
-                className="rounded-2xl border border-[#E5E7EB] bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
+                className="hl-card hover-pop rounded-2xl border border-[#E5E7EB] bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
+                data-pop="Program Details"
               >
                 <img src={program.image} alt={program.title} className="h-48 w-full rounded-t-2xl object-cover" loading="lazy" />
                 <div className="p-5">
@@ -120,7 +122,8 @@ export default function ProgramsPage() {
                   </ul>
                   <Link
                     to="/admissions"
-                    className="mt-5 inline-flex min-h-10 items-center justify-center rounded-lg bg-[#F59E0B] px-5 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                    className="hover-pop mt-5 inline-flex min-h-10 items-center justify-center rounded-lg bg-[#F59E0B] px-5 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                    data-pop="Enroll"
                   >
                     Enroll Now
                   </Link>
@@ -131,7 +134,7 @@ export default function ProgramsPage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="py-16">
+      <motion.section {...reveal} className="section-reveal py-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="rounded-2xl bg-[#111827] px-6 py-10 text-white sm:px-10 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#F59E0B]">Limited Seats</p>
@@ -140,13 +143,15 @@ export default function ProgramsPage() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
                 to="/admissions"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                data-pop="Enroll"
               >
                 Enroll Now
               </Link>
               <Link
                 to="/admissions"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                data-pop="Book Demo"
               >
                 Book Free Demo
               </Link>
