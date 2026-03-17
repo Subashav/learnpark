@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { faculty, programs, testimonials } from '../data/siteContent';
-import girlOne from '../assets/girl 1.png';
 import girlTwo from '../assets/girl 2.png';
 import boyOne from '../assets/boy 1.png';
+import drImage from '../assets/dr image.png';
 
 export default function HomePage() {
   const reveal = {
@@ -93,7 +93,7 @@ export default function HomePage() {
                 <p className="font-heading text-lg font-bold text-[#06B6D4]">500+</p>
               </div>
               <div className="overflow-hidden rounded-[2rem] border border-white/35 bg-white/10 p-3 backdrop-blur-sm">
-                <img src={girlOne} alt="NEET student achiever" className="h-[420px] w-full rounded-[1.5rem] object-cover" loading="eager" />
+                <img src={drImage} alt="NEET student achiever" className="h-[420px] w-full rounded-[1.5rem] object-cover" loading="eager" />
               </div>
             </motion.div>
           </div>
