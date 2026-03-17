@@ -55,6 +55,34 @@ export default function ProgramsPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      <motion.section {...reveal} className="py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5] mb-4">Promotions &amp; Announcements</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {banners.map((banner) => (
+              <button
+                key={banner.alt}
+                type="button"
+                onClick={() => setLightbox(banner)}
+                className="group relative overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-md transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none"
+              >
+                <img
+                  src={banner.src}
+                  alt={banner.alt}
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all group-hover:bg-black/30">
+                  <span className="scale-75 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-[#111827] opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100">
+                    Click to view full size
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       <motion.section {...reveal} className="py-12">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Programs</p>
@@ -98,34 +126,6 @@ export default function ProgramsPage() {
                   </Link>
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section {...reveal} className="py-8">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5] mb-4">Promotions & Announcements</p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {banners.map((banner) => (
-              <button
-                key={banner.alt}
-                type="button"
-                onClick={() => setLightbox(banner)}
-                className="group relative overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-md transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none"
-              >
-                <img
-                  src={banner.src}
-                  alt={banner.alt}
-                  className="w-full h-48 object-cover sm:h-56"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all group-hover:bg-black/30">
-                  <span className="scale-75 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-[#111827] opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100">
-                    Click to view full size
-                  </span>
-                </div>
-              </button>
             ))}
           </div>
         </div>
