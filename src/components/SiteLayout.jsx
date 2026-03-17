@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import logoImage from '../assets/hero.png';
 
 const navItems = [
@@ -64,8 +64,8 @@ export default function SiteLayout() {
                 to={item.to}
                 className={({ isActive }) =>
                   isActive
-                    ? 'rounded-xl border border-[#BFDBFE] bg-white px-3 py-1.5 font-semibold text-[#2563EB] shadow-[0_8px_18px_rgba(37,99,235,0.10)]'
-                    : 'rounded-xl border border-transparent px-3 py-1.5 transition-colors hover:border-[#DBEAFE] hover:bg-white hover:text-[#2563EB]'
+                    ? 'rounded-xl border border-[#C7D2FE] bg-white px-3 py-1.5 font-semibold text-[#4F46E5] shadow-[0_8px_18px_rgba(79,70,229,0.10)]'
+                    : 'rounded-xl border border-transparent px-3 py-1.5 transition-colors hover:border-[#E0E7FF] hover:bg-white hover:text-[#4F46E5]'
                 }
               >
                 {item.label}
@@ -78,7 +78,7 @@ export default function SiteLayout() {
             aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#E2E8F0] bg-[#F8FAFC] text-[#2563EB] transition hover:border-[#BFDBFE] hover:bg-[#EFF6FF] md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#E2E8F0] bg-[#F8FAFC] text-[#4F46E5] transition hover:border-[#C7D2FE] hover:bg-[#EEF2FF] md:hidden"
           >
             <span className="flex flex-col gap-1.5">
               <span
@@ -109,8 +109,8 @@ export default function SiteLayout() {
                   to={item.to}
                   className={({ isActive }) =>
                     isActive
-                      ? 'rounded-2xl border border-[#BFDBFE] bg-[#EFF6FF] px-4 py-3 font-semibold text-[#2563EB]'
-                      : 'rounded-2xl px-4 py-3 text-[#475569] transition hover:bg-[#F8FAFC] hover:text-[#2563EB]'
+                      ? 'rounded-2xl border border-[#C7D2FE] bg-[#EEF2FF] px-4 py-3 font-semibold text-[#4F46E5]'
+                      : 'rounded-2xl px-4 py-3 text-[#475569] transition hover:bg-[#F8FAFC] hover:text-[#4F46E5]'
                   }
                 >
                   {item.label}
@@ -121,9 +121,26 @@ export default function SiteLayout() {
         ) : null}
       </header>
 
-      <main className="relative z-10 mx-auto flex w-full max-w-[1380px] flex-col gap-6 px-4 pb-10 pt-4 sm:px-5 sm:pt-6 md:gap-10 md:px-6 md:pb-16 md:pt-8 xl:px-8">
+      <main className="relative z-10 mx-auto flex w-full max-w-[1380px] flex-col gap-6 px-4 pb-24 pt-4 sm:px-5 sm:pt-6 md:gap-10 md:px-6 md:pb-16 md:pt-8 xl:px-8">
         <Outlet />
       </main>
+
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-[#E5E7EB] bg-white/95 px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm md:hidden">
+        <div className="flex gap-3">
+          <Link
+            to="/admissions"
+            className="flex-1 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#4F46E5] text-sm font-semibold text-white transition-all hover:bg-[#4338CA]"
+          >
+            Enroll Now
+          </Link>
+          <a
+            href="tel:+919894849778"
+            className="flex-1 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#F59E0B] text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+          >
+            Call Us
+          </a>
+        </div>
+      </div>
 
       <footer className="border-t border-[#E2E8F0] bg-white">
         <div className="mx-auto grid w-full max-w-[1380px] gap-8 px-4 py-8 sm:px-5 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-12 xl:px-8">
