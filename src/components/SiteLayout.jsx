@@ -13,7 +13,6 @@ const navItems = [
   { to: '/', label: 'Home' },
   { to: '/programs', label: 'Programs' },
   { to: '/know-us', label: 'Know Us' },
-  { to: '/faculty', label: 'Faculty' },
   { to: '/admissions', label: 'Admissions' },
 ];
 
@@ -28,7 +27,7 @@ export default function SiteLayout() {
       title: 'About Institute',
       links: [
         { label: 'LearnPark Overview', to: '/' },
-        { label: 'Faculty', to: '/faculty' },
+        { label: 'Know Us', to: '/know-us' },
         { label: 'Admissions', to: '/admissions' },
       ],
     },

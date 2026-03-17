@@ -287,7 +287,7 @@ export default function HomePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Experienced Trainers</p>
               <h2 className="font-heading mt-3 text-2xl font-bold text-[#111827] sm:text-3xl">What we provide through our experienced trainers.</h2>
             </div>
-            <Link to="/faculty" className="text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]">Know more</Link>
+            <Link to="/know-us" className="text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]">Know more</Link>
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
