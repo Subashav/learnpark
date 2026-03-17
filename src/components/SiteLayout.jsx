@@ -211,7 +211,7 @@ export default function SiteLayout() {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">{column.title}</p>
@@ -225,9 +225,9 @@ export default function SiteLayout() {
               </div>
             ))}
 
-            <div>
+            <div className="sm:col-span-2 lg:col-span-3">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Contact</p>
-              <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <div className="mt-4 grid gap-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6 md:grid-cols-[minmax(0,1.45fr)_minmax(0,0.55fr)]">
                 <div className="flex flex-col gap-3 text-sm leading-7 text-[#475569]">
                   <span>Phone: +91 98948 49778 / 94878 01778</span>
                   <span>Email: learnpark.edu@gmail.com</span>
