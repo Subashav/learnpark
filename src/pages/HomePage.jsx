@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { programs, testimonials } from '../data/siteContent';
+import girlOne from '../assets/girl 1.png';
+import girlTwo from '../assets/girl 2.png';
+import boyOne from '../assets/boy 1.png';
 import drImage from '../assets/dr image.png';
 import drImageNew from '../assets/dr image new.png';
-import trainerImageThree from '../assets/hf.png';
 
 export default function HomePage() {
   const heroImages = [drImage, drImageNew];
@@ -54,17 +56,17 @@ export default function HomePage() {
     {
       title: 'Daily Doubt-Clearing Support',
       desc: 'Topic-wise and question-wise doubt solving with dedicated subject trainers.',
-      image: drImage,
+      image: girlOne,
     },
     {
       title: 'Personal Mentorship Reviews',
       desc: 'Weekly performance tracking, correction plans, and focused intervention support.',
-      image: drImageNew,
+      image: girlTwo,
     },
     {
       title: 'Structured Test Analysis',
       desc: 'Chapter tests, cumulative exams, and mock analytics with improvement strategy.',
-      image: trainerImageThree,
+      image: boyOne,
     },
   ];
 
