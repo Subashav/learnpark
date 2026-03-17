@@ -155,8 +155,8 @@ export default function SiteLayout() {
 
             <div className="lg:col-span-2">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Contact</p>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:items-stretch">
-                <div className="flex flex-col gap-3 text-sm leading-7 text-[#475569]">
+              <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-6">
+                <div className="flex flex-col gap-3 text-sm leading-7 text-[#475569] lg:w-[220px] lg:flex-shrink-0">
                   <span>Phone: 098948 49778</span>
                   <span>Email: info@learnparkacademy.in</span>
                   <span>Address: 41/1, Nalli Hospital Rd, opp. Royal Theatre, Municipal Colony, Annamalai Layout, Erode, Tamil Nadu 638004</span>
@@ -164,13 +164,13 @@ export default function SiteLayout() {
                     Open in Google Maps
                   </a>
                 </div>
-                <div className="min-h-[180px] overflow-hidden rounded-xl border border-[#E2E8F0] shadow-[0_4px_12px_rgba(15,23,42,0.06)]">
+                <div className="w-full overflow-hidden rounded-xl border border-[#E2E8F0] shadow-[0_4px_12px_rgba(15,23,42,0.06)]">
                   <iframe
                     title="LearnPark NEET Academy Location"
                     src="https://maps.google.com/maps?q=11.3466713,77.7164288&z=17&output=embed"
                     width="100%"
-                    height="100%"
-                    style={{ border: 0, display: 'block', minHeight: '180px' }}
+                    height="220"
+                    style={{ border: 0, display: 'block' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
