@@ -69,12 +69,12 @@ export default function SiteLayout() {
   return (
     <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <header className="sticky top-0 z-30 border-b border-[#E2E8F0] bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-[1380px] items-center justify-between px-4 py-0 sm:px-5 lg:px-6 xl:px-8" style={{minHeight: '56px'}}>
+        <div className="mx-auto flex w-full max-w-[1380px] items-center justify-between px-4 py-0 sm:px-5 lg:px-6 xl:px-8" style={{ minHeight: '52px' }}>
           <NavLink to="/" className="inline-flex items-center">
             <img
               src={logoImage}
               alt="Learn Park Academy"
-              className="h-14 w-auto object-contain"
+              className="h-11 w-auto object-contain sm:h-14"
             />
           </NavLink>
 
@@ -85,9 +85,10 @@ export default function SiteLayout() {
                 to={item.to}
                 className={({ isActive }) =>
                   isActive
-                    ? 'rounded-xl border border-[#C7D2FE] bg-white px-3 py-1.5 font-semibold text-[#4F46E5] shadow-[0_8px_18px_rgba(79,70,229,0.10)]'
-                    : 'rounded-xl border border-transparent px-3 py-1.5 transition-colors hover:border-[#E0E7FF] hover:bg-white hover:text-[#4F46E5]'
+                    ? 'hover-pop rounded-xl border border-[#C7D2FE] bg-white px-3 py-1.5 font-semibold text-[#4F46E5] shadow-[0_8px_18px_rgba(79,70,229,0.10)]'
+                    : 'hover-pop rounded-xl border border-transparent px-3 py-1.5 transition-colors hover:border-[#E0E7FF] hover:bg-white hover:text-[#4F46E5]'
                 }
+                data-pop="Navigate"
               >
                 {item.label}
               </NavLink>
@@ -142,12 +143,12 @@ export default function SiteLayout() {
         ) : null}
       </header>
 
-      <main className="relative z-10 mx-auto flex w-full max-w-[1380px] flex-col gap-6 px-4 pb-24 pt-4 sm:px-5 sm:pt-6 md:gap-10 md:px-6 md:pb-16 md:pt-8 xl:px-8">
+      <main className="relative z-10 mx-auto flex w-full max-w-[1380px] flex-col gap-6 px-4 pb-24 pt-4 sm:px-5 sm:pb-28 sm:pt-6 md:gap-10 md:px-6 md:pb-16 md:pt-8 xl:px-8">
         <Outlet />
       </main>
 
       {isPromoVisible ? (
-        <div className="fixed bottom-20 right-4 z-50 w-[min(92vw,360px)] rounded-2xl border border-[#E5E7EB] bg-white p-2.5 shadow-[0_16px_40px_rgba(15,23,42,0.22)] md:bottom-4 md:right-6">
+        <div className="fixed bottom-4 right-6 z-50 hidden w-[min(92vw,360px)] rounded-2xl border border-[#E5E7EB] bg-white p-2.5 shadow-[0_16px_40px_rgba(15,23,42,0.22)] sm:block">
           <button
             type="button"
             onClick={() => setIsPromoVisible(false)}
@@ -186,7 +187,7 @@ export default function SiteLayout() {
       </div>
 
       <footer className="border-t border-[#E2E8F0] bg-white">
-        <div className="mx-auto grid w-full max-w-[1380px] gap-8 px-4 py-8 sm:px-5 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-12 xl:px-8">
+        <div className="mx-auto grid w-full max-w-[1380px] gap-8 px-4 py-8 sm:px-5 lg:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-12 xl:px-8">
           <div>
             <p className="font-heading text-2xl font-bold text-[#0F172A]">Learn Park Academy</p>
             <p className="mt-4 max-w-xl leading-8 text-[#475569]">
@@ -217,7 +218,7 @@ export default function SiteLayout() {
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">{column.title}</p>
                 <div className="mt-4 flex flex-col gap-3 text-sm text-[#475569]">
                   {column.links.map((link) => (
-                    <NavLink key={link.label} to={link.to} className="transition-colors hover:text-[#2563EB]">
+                    <NavLink key={link.label} to={link.to} className="hover-pop transition-colors hover:text-[#2563EB]" data-pop="Open">
                       {link.label}
                     </NavLink>
                   ))}
@@ -227,12 +228,12 @@ export default function SiteLayout() {
 
             <div className="sm:col-span-2 lg:col-span-3">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Contact</p>
-              <div className="mt-4 grid gap-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6 md:grid-cols-[minmax(0,1.45fr)_minmax(0,0.55fr)]">
-                <div className="flex flex-col gap-3 text-sm leading-7 text-[#475569]">
+              <div className="mt-4 grid gap-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,0.55fr)]">
+                <div className="flex flex-col gap-3 break-words text-sm leading-7 text-[#475569]">
                   <span>Phone: +91 98948 49778 / 94878 01778</span>
                   <span>Email: learnpark.edu@gmail.com</span>
                   <span>Address: 41, Nalli Hospital Road, Opp Royal Theatre, Erode - 638001, TN, India</span>
-                  <a href="https://maps.google.com/?q=41+Nalli+Hospital+Road+Opp+Royal+Theatre+Erode+638001" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                  <a href="https://maps.google.com/?q=41+Nalli+Hospital+Road+Opp+Royal+Theatre+Erode+638001" target="_blank" rel="noreferrer" className="hover-pop font-semibold text-[#2563EB] hover:text-[#1D4ED8]" data-pop="Open Map">
                     Open in Google Maps
                   </a>
                 </div>
@@ -240,13 +241,13 @@ export default function SiteLayout() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Connect</p>
                   <div className="mt-3 flex flex-col gap-3 text-sm leading-7 text-[#475569]">
-                    <a href="http://www.youtube.com/@learnparkneet1269" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                    <a href="http://www.youtube.com/@learnparkneet1269" target="_blank" rel="noreferrer" className="hover-pop font-semibold text-[#2563EB] hover:text-[#1D4ED8]" data-pop="YouTube">
                       YouTube
                     </a>
-                    <a href="https://www.facebook.com/learnpark.neet.1/" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                    <a href="https://www.facebook.com/learnpark.neet.1/" target="_blank" rel="noreferrer" className="hover-pop font-semibold text-[#2563EB] hover:text-[#1D4ED8]" data-pop="Facebook">
                       Facebook
                     </a>
-                    <a href="https://www.instagram.com/learnparkacademy/" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                    <a href="https://www.instagram.com/learnparkacademy/" target="_blank" rel="noreferrer" className="hover-pop font-semibold text-[#2563EB] hover:text-[#1D4ED8]" data-pop="Instagram">
                       Instagram
                     </a>
                   </div>

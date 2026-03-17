@@ -122,6 +122,78 @@ body {
   font-family: 'Sora', Inter, system-ui, sans-serif;
 }
 
+.section-reveal {
+  position: relative;
+  transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease;
+}
+
+.section-reveal:hover {
+  transform: translateY(-4px);
+}
+
+.hover-pop {
+  position: relative;
+  overflow: visible;
+}
+
+.hover-pop::before {
+  content: attr(data-pop);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translate(-50%, 8px);
+  background: #111827;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 220ms ease, transform 220ms ease;
+  z-index: 30;
+}
+
+.hover-pop::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 4px);
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #111827;
+  opacity: 0;
+  transition: opacity 220ms ease;
+  z-index: 30;
+}
+
+.hover-pop:hover::before,
+.hover-pop:hover::after,
+.hover-pop:focus-visible::before,
+.hover-pop:focus-visible::after {
+  opacity: 1;
+}
+
+.hover-pop:hover::before,
+.hover-pop:focus-visible::before {
+  transform: translate(-50%, 0);
+}
+
+.hl-card {
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+
+.hl-card:hover,
+.hl-card:focus-within {
+  transform: translateY(-8px);
+  border-color: rgba(79, 70, 229, 0.45);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+}
+
 .testimonial-rail {
   scrollbar-width: thin;
   scrollbar-color: rgba(79, 70, 229, 0.35) transparent;
@@ -168,6 +240,17 @@ body {
 }
 
 @media (max-width: 640px) {
+  .hover-pop::before,
+  .hover-pop::after {
+    display: none;
+  }
+
+  .section-reveal:hover,
+  .hl-card:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+
   .image-hover-rise:hover {
     transform: translateY(-4px) scale(1.01);
     box-shadow: 0 10px 22px rgba(31, 120, 180, 0.16);
@@ -188,6 +271,19 @@ body {
   }
 }
 
+@media (hover: none) {
+  .hover-pop::before,
+  .hover-pop::after {
+    display: none;
+  }
+
+  .section-reveal:hover,
+  .hl-card:hover,
+  .elevated-card:hover {
+    transform: none;
+  }
+}
+
 @keyframes commentsScroll {
   0% {
     transform: translateX(0);
@@ -201,7 +297,10 @@ body {
   .elevated-card,
   .elevated-card::before,
   .elevated-card::after,
-  .image-hover-rise {
+  .image-hover-rise,
+  .section-reveal,
+  .hover-pop::before,
+  .hl-card {
     transition: none;
   }
 

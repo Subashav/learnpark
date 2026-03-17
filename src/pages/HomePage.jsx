@@ -74,8 +74,8 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSeoSchema) }} />
 
-      <section className="rounded-[2rem] bg-gradient-to-br from-[#4F46E5] via-[#4338CA] to-[#06B6D4] text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16">
+      <section className="section-reveal rounded-[2rem] bg-gradient-to-br from-[#4F46E5] via-[#4338CA] to-[#06B6D4] text-white">
+        <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16">
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <motion.div {...reveal}>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/80">Trusted NEET Institute in Erode</p>
@@ -97,13 +97,15 @@ export default function HomePage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to="/admissions"
-                  className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:-translate-y-0.5 hover:brightness-105"
+                  className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:-translate-y-0.5 hover:brightness-105"
+                  data-pop="Enroll"
                 >
                   Enroll Now
                 </Link>
                 <Link
                   to="/admissions"
-                  className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                  className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                  data-pop="Book Demo"
                 >
                   Book Free Demo
                 </Link>
@@ -120,7 +122,7 @@ export default function HomePage() {
                 <p className="font-heading text-lg font-bold text-[#06B6D4]">500+</p>
               </div>
               <div className="overflow-hidden rounded-[2rem] border border-white/35 bg-white/10 p-3 backdrop-blur-sm">
-                <div className="relative h-[420px] w-full rounded-[1.5rem] overflow-hidden">
+                <div className="relative h-[320px] w-full overflow-hidden rounded-[1.5rem] sm:h-[420px]">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={heroImages[heroIdx]}
@@ -141,7 +143,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <motion.section {...reveal} className="py-16">
+      <motion.section {...reveal} className="section-reveal py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Results and Trust</p>
           <h2 className="font-heading mt-3 text-2xl font-bold text-[#111827] sm:text-3xl">Real outcomes parents can trust.</h2>
@@ -157,13 +159,13 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="bg-white py-16">
+      <motion.section {...reveal} className="section-reveal bg-white py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Why Choose Us</p>
           <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">A preparation system built for serious NEET aspirants.</h2>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">
             {trustPoints.map((point) => (
-              <li key={point} className="flex items-start gap-3 rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-4">
+              <li key={point} className="hl-card hover-pop flex items-start gap-3 rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-4" data-pop="Trusted Feature">
                 <span className="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[#4F46E5] text-xs font-bold text-white">✓</span>
                 <span className="text-[15px] leading-7 text-[#111827]">{point}</span>
               </li>
@@ -172,21 +174,22 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="py-16">
+      <motion.section {...reveal} className="section-reveal py-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Courses</p>
               <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Choose the right NEET program.</h2>
             </div>
-            <Link to="/programs" className="text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]">View all</Link>
+            <Link to="/programs" className="hover-pop text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]" data-pop="See Programs">View all</Link>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {featuredPrograms.map((program) => (
               <article
                 key={program.title}
-                className="rounded-2xl border border-[#E5E7EB] bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
+                className="hl-card hover-pop rounded-2xl border border-[#E5E7EB] bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
+                data-pop="Program"
               >
                 <img src={program.image} alt={program.title} className="h-44 w-full rounded-t-2xl object-cover" loading="lazy" />
                 <div className="p-5">
@@ -194,7 +197,8 @@ export default function HomePage() {
                   <p className="mt-3 text-sm leading-7 text-[#6B7280]">{program.desc}</p>
                   <Link
                     to="/admissions"
-                    className="mt-5 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#F59E0B] px-4 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                    className="hover-pop mt-5 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#F59E0B] px-4 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                    data-pop="Apply"
                   >
                     Enroll Now
                   </Link>
@@ -205,13 +209,13 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="bg-[#F9FAFB] py-16">
+      <motion.section {...reveal} className="section-reveal bg-[#F9FAFB] py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">What We Offer</p>
           <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Complete NEET preparation with exclusive benefits.</h2>
           
           <div className="mt-10 grid gap-8 lg:grid-cols-3">
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm">
+            <article className="hl-card hover-pop rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm" data-pop="Offer">
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#06B6D4]">Tamil Medium Support</p>
               <ul className="mt-4 space-y-3">
                 {[
@@ -227,7 +231,7 @@ export default function HomePage() {
               </ul>
             </article>
 
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm">
+            <article className="hl-card hover-pop rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm" data-pop="Offer">
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#4F46E5]">Academic Excellence</p>
               <ul className="mt-4 space-y-3">
                 {[
@@ -244,7 +248,7 @@ export default function HomePage() {
               </ul>
             </article>
 
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm">
+            <article className="hl-card hover-pop rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-sm" data-pop="Offer">
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#F59E0B]">Premium Facilities</p>
               <ul className="mt-4 space-y-3">
                 {[
@@ -264,14 +268,14 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="bg-[#EEF2FF] py-16">
+      <motion.section {...reveal} className="section-reveal bg-[#EEF2FF] py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Testimonials</p>
           <h2 className="font-heading mt-3 text-2xl font-bold text-[#111827] sm:text-3xl">Students who transformed their scores.</h2>
 
           <div className="testimonial-rail mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
             {testimonials.map(([name, quote]) => (
-              <article key={name} className="min-w-[82%] snap-start rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-md md:min-w-0">
+              <article key={name} className="hl-card hover-pop min-w-[82%] snap-start rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-md md:min-w-0" data-pop="Testimonial">
                 <p className="text-base font-semibold text-[#111827]">{name}</p>
                 <p className="mt-3 text-sm leading-7 text-[#6B7280]">{quote}</p>
               </article>
@@ -280,19 +284,19 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="py-16">
+      <motion.section {...reveal} className="section-reveal py-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Experienced Trainers</p>
               <h2 className="font-heading mt-3 text-2xl font-bold text-[#111827] sm:text-3xl">What we provide through our experienced trainers.</h2>
             </div>
-            <Link to="/know-us" className="text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]">Know more</Link>
+            <Link to="/know-us" className="hover-pop text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]" data-pop="Visit Know Us">Know more</Link>
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {trainerSupport.map((item) => (
-              <article key={item.title} className="rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm">
+              <article key={item.title} className="hl-card hover-pop rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm" data-pop="Trainer Support">
                 <div className="h-56 overflow-hidden rounded-xl bg-[#F3F4F6] sm:h-60">
                   <img src={item.image} alt={item.title} className="h-full w-full object-contain object-center" loading="lazy" />
                 </div>
@@ -304,7 +308,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...reveal} className="pb-16">
+      <motion.section {...reveal} className="section-reveal pb-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="rounded-2xl bg-[#111827] px-6 py-10 text-white sm:px-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#F59E0B]">Limited Seats</p>
@@ -315,13 +319,15 @@ export default function HomePage() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/admissions"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl bg-[#F59E0B] px-6 text-sm font-semibold text-[#111827] transition-all hover:brightness-105"
+                data-pop="Enroll"
               >
                 Enroll Now
               </Link>
               <Link
                 to="/admissions"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                className="hover-pop inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                data-pop="Book Demo"
               >
                 Book Free Demo
               </Link>
