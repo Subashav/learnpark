@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { programs } from '../data/siteContent';
 import crashPostImg from '../assets/crash post .jpg.jpeg';
+import erodeCCImg from '../assets/erode cc 26 a.jpg.jpeg';
 
 export default function ProgramsPage() {
+  const [lightbox, setLightbox] = useState(null);
+
   const reveal = {
     initial: { opacity: 0, y: 34 },
     whileInView: { opacity: 1, y: 0 },
@@ -11,8 +15,46 @@ export default function ProgramsPage() {
     viewport: { once: true, amount: 0.2 },
   };
 
+  const banners = [
+    { src: crashPostImg, alt: 'NEET Crash Course 2026 — LearnPark Academy' },
+    { src: erodeCCImg, alt: 'LearnPark NEET Academy Erode — 2026 Admissions' },
+  ];
+
   return (
     <>
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+            onClick={() => setLightbox(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative max-h-[90vh] max-w-4xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute -top-10 right-0 text-white/80 hover:text-white text-sm font-semibold"
+              >
+                ✕ Close
+              </button>
+              <img
+                src={lightbox.src}
+                alt={lightbox.alt}
+                className="w-full h-auto max-h-[90vh] rounded-2xl object-contain shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <motion.section {...reveal} className="py-12">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Programs</p>
@@ -63,13 +105,28 @@ export default function ProgramsPage() {
 
       <motion.section {...reveal} className="py-8">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-lg">
-            <img
-              src={crashPostImg}
-              alt="NEET Crash Course 2026 — LearnPark Academy"
-              className="w-full object-contain"
-              loading="lazy"
-            />
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5] mb-4">Promotions & Announcements</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {banners.map((banner) => (
+              <button
+                key={banner.alt}
+                type="button"
+                onClick={() => setLightbox(banner)}
+                className="group relative overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-md transition-all hover:scale-[1.02] hover:shadow-xl focus:outline-none"
+              >
+                <img
+                  src={banner.src}
+                  alt={banner.alt}
+                  className="w-full h-48 object-cover sm:h-56"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all group-hover:bg-black/30">
+                  <span className="scale-75 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-[#111827] opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100">
+                    Click to view full size
+                  </span>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </motion.section>
