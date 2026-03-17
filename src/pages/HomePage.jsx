@@ -47,7 +47,7 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSeoSchema) }} />
 
-      <section className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#4F46E5] via-[#4338CA] to-[#06B6D4] text-white">
+      <section className="rounded-[2rem] bg-gradient-to-br from-[#4F46E5] via-[#4338CA] to-[#06B6D4] text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <motion.div {...reveal}>
@@ -83,17 +83,17 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            <motion.div {...reveal} className="relative mx-auto w-full max-w-[420px]">
-              <div className="absolute -left-5 top-3 rounded-2xl bg-white px-3 py-2 text-[#111827] shadow-xl sm:-left-8 sm:px-4">
+            <motion.div {...reveal} className="relative mx-auto w-full max-w-[420px] px-8">
+              <div className="absolute left-0 top-3 z-10 rounded-2xl bg-white px-3 py-2 text-[#111827] shadow-xl sm:px-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6B7280]">Top Result</p>
                 <p className="font-heading text-lg font-bold text-[#4F46E5]">AIR 120</p>
               </div>
-              <div className="absolute -right-5 bottom-7 rounded-2xl bg-white px-3 py-2 text-[#111827] shadow-xl sm:-right-8 sm:px-4">
+              <div className="absolute right-0 bottom-7 z-10 rounded-2xl bg-white px-3 py-2 text-[#111827] shadow-xl sm:px-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6B7280]">Selections</p>
                 <p className="font-heading text-lg font-bold text-[#06B6D4]">500+</p>
               </div>
               <div className="overflow-hidden rounded-[2rem] border border-white/35 bg-white/10 p-3 backdrop-blur-sm">
-                <img src={drImage} alt="NEET student achiever" className="h-[420px] w-full rounded-[1.5rem] object-cover" loading="eager" />
+                <img src={drImage} alt="NEET student achiever" className="h-[420px] w-full rounded-[1.5rem] object-cover object-top" loading="eager" />
               </div>
             </motion.div>
           </div>
