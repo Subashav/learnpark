@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { faculty, programs, testimonials } from '../data/siteContent';
-import girlTwo from '../assets/girl 2.png';
-import boyOne from '../assets/boy 1.png';
+import { programs, testimonials } from '../data/siteContent';
 import drImage from '../assets/dr image.png';
 import drImageNew from '../assets/dr image new.png';
 
@@ -51,7 +49,11 @@ export default function HomePage() {
 
   const heroBadges = ['500+ Selections', 'AIR 120', '95% Parent Satisfaction'];
   const featuredPrograms = programs.slice(0, 3);
-  const featuredFaculty = faculty.slice(0, 3);
+  const trainerSupport = [
+    ['Daily Doubt-Clearing Support', 'Topic-wise and question-wise doubt solving with dedicated subject trainers.'],
+    ['Personal Mentorship Reviews', 'Weekly performance tracking, correction plans, and focused intervention support.'],
+    ['Structured Test Analysis', 'Chapter tests, cumulative exams, and mock analytics with improvement strategy.'],
+  ];
 
   return (
     <>
@@ -127,21 +129,16 @@ export default function HomePage() {
       <motion.section {...reveal} className="py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Results and Trust</p>
-          <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Real outcomes parents can trust.</h2>
+          <h2 className="font-heading mt-3 text-2xl font-bold text-[#111827] sm:text-3xl">Real outcomes parents can trust.</h2>
           <div className="mt-10 grid gap-8 border-y border-[#E5E7EB] py-8 sm:grid-cols-3">
             {proofStats.map(([value, label]) => (
               <div key={label}>
-                <p className="font-heading text-4xl font-bold text-[#111827] sm:text-5xl">{value}</p>
+                <p className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl">{value}</p>
                 <p className="mt-2 text-sm font-medium uppercase tracking-[0.16em] text-[#6B7280]">{label}</p>
               </div>
             ))}
           </div>
-          <div className="mt-8 flex items-center gap-4 overflow-x-auto pb-1">
-            {[girlTwo, boyOne].map((img, idx) => (
-              <img key={img} src={img} alt={`Top rank student ${idx + 1}`} className="h-16 w-16 flex-none rounded-full border-2 border-[#4F46E5]/20 object-cover" loading="lazy" />
-            ))}
-            <p className="text-sm leading-7 text-[#6B7280]">Consistent AIR ranks with subject-wise mentoring, test analytics, and disciplined revision cycles.</p>
-          </div>
+          <p className="mt-8 text-sm leading-7 text-[#6B7280]">Consistent AIR ranks with subject-wise mentoring, test analytics, and disciplined revision cycles.</p>
         </div>
       </motion.section>
 
@@ -255,16 +252,13 @@ export default function HomePage() {
       <motion.section {...reveal} className="bg-[#EEF2FF] py-16">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Testimonials</p>
-          <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Students who transformed their scores.</h2>
+          <h2 className="font-heading mt-3 text-2xl font-bold text-[#111827] sm:text-3xl">Students who transformed their scores.</h2>
 
           <div className="testimonial-rail mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
-            {testimonials.map(([name, quote, image]) => (
+            {testimonials.map(([name, quote]) => (
               <article key={name} className="min-w-[82%] snap-start rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-md md:min-w-0">
-                <div className="flex items-center gap-3">
-                  <img src={image} alt={name} className="h-14 w-14 rounded-full object-cover" loading="lazy" />
-                  <p className="font-semibold text-[#111827]">{name}</p>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-[#6B7280]">{quote}</p>
+                <p className="text-base font-semibold text-[#111827]">{name}</p>
+                <p className="mt-3 text-sm leading-7 text-[#6B7280]">{quote}</p>
               </article>
             ))}
           </div>
@@ -275,18 +269,17 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Faculty</p>
-              <h2 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Learn from experienced NEET mentors.</h2>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Experienced Trainers</p>
+              <h2 className="font-heading mt-3 text-2xl font-bold text-[#111827] sm:text-3xl">What we provide through our experienced trainers.</h2>
             </div>
-            <Link to="/faculty" className="text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]">View faculty</Link>
+            <Link to="/faculty" className="text-sm font-semibold text-[#4F46E5] hover:text-[#4338CA]">Know more</Link>
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredFaculty.map(([name, role, image]) => (
-              <article key={name} className="rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm">
-                <img src={image} alt={name} className="h-56 w-full rounded-xl object-cover" loading="lazy" />
-                <h3 className="font-heading mt-4 text-xl font-bold text-[#111827]">{name}</h3>
-                <p className="mt-2 text-sm leading-7 text-[#6B7280]">{role}</p>
+            {trainerSupport.map(([title, desc]) => (
+              <article key={title} className="rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm">
+                <h3 className="font-heading text-lg font-bold text-[#111827]">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[#6B7280]">{desc}</p>
               </article>
             ))}
           </div>
