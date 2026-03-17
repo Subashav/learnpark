@@ -81,7 +81,7 @@ export default function SiteLayout() {
           }
         });
       },
-      { threshold: 0.14, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0.08, rootMargin: '0px 0px -16% 0px' },
     );
 
     sections.forEach((section) => observer.observe(section));
