@@ -48,12 +48,12 @@ export default function SiteLayout() {
   return (
     <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <header className="sticky top-0 z-30 border-b border-[#E2E8F0] bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-[1380px] items-center justify-between px-4 py-1.5 sm:px-5 sm:py-2 lg:px-6 xl:px-8">
+        <div className="mx-auto flex w-full max-w-[1380px] items-center justify-between px-4 py-0 sm:px-5 lg:px-6 xl:px-8" style={{minHeight: '56px'}}>
           <NavLink to="/" className="inline-flex items-center">
             <img
               src={logoImage}
               alt="LearnPark NEET Academy"
-              className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+              className="h-14 w-auto object-contain"
             />
           </NavLink>
 
