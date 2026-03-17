@@ -25,24 +25,24 @@ function FeatureIcon({ type }) {
 
 export default function HomePage() {
   const revealUp = {
-    initial: { opacity: 0, y: 24 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: 'easeOut' },
-    viewport: { once: false, amount: 0.18 },
+    initial: { opacity: 0, y: 88, scale: 0.92, rotateX: 12, filter: 'blur(12px)' },
+    whileInView: { opacity: 1, y: 0, scale: 1, rotateX: 0, filter: 'blur(0px)' },
+    transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1] },
+    viewport: { once: true, amount: 0.22 },
   };
 
   const revealLeft = {
-    initial: { opacity: 0, x: -24 },
-    whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: 'easeOut' },
-    viewport: { once: false, amount: 0.18 },
+    initial: { opacity: 0, x: -96, scale: 0.94, rotateY: -10, filter: 'blur(12px)' },
+    whileInView: { opacity: 1, x: 0, scale: 1, rotateY: 0, filter: 'blur(0px)' },
+    transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1] },
+    viewport: { once: true, amount: 0.2 },
   };
 
   const revealRight = {
-    initial: { opacity: 0, x: 24 },
-    whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: 'easeOut' },
-    viewport: { once: false, amount: 0.18 },
+    initial: { opacity: 0, x: 96, scale: 0.94, rotateY: 10, filter: 'blur(12px)' },
+    whileInView: { opacity: 1, x: 0, scale: 1, rotateY: 0, filter: 'blur(0px)' },
+    transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1] },
+    viewport: { once: true, amount: 0.2 },
   };
 
   const homeSeoSchema = {
@@ -94,17 +94,17 @@ export default function HomePage() {
 
       <motion.section
         {...revealUp}
-        className="grid grid-cols-2 gap-3 rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.04)] sm:gap-4 sm:px-6 sm:py-8 md:grid-cols-4 md:rounded-[32px] md:px-8 md:py-10"
+        className="section-spotlight grid grid-cols-2 gap-3 rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.04)] sm:gap-4 sm:px-6 sm:py-8 md:grid-cols-4 md:rounded-[32px] md:px-8 md:py-10"
       >
         {results.map(([value, label]) => (
-          <article key={label} className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-4 text-center sm:px-5 sm:py-5">
+          <article key={label} className="elevated-card rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-4 text-center sm:px-5 sm:py-5">
             <p className="font-heading text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">{value}</p>
             <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[#64748B] sm:text-sm sm:tracking-[0.16em]">{label}</p>
           </article>
         ))}
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealUp} className="section-spotlight rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#2563EB]">Results</p>
           <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
@@ -119,9 +119,9 @@ export default function HomePage() {
           {successStories.map(([rank, name, score, college, image]) => (
             <motion.article
               key={name}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.25 }}
-              className="overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] shadow-[0_16px_32px_rgba(15,23,42,0.05)]"
+              whileHover={{ y: -10, scale: 1.01 }}
+              transition={{ duration: 0.28 }}
+              className="elevated-card overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] shadow-[0_16px_32px_rgba(15,23,42,0.05)]"
             >
               <div className="relative h-60 overflow-hidden bg-[linear-gradient(180deg,rgba(37,99,235,0.08),rgba(22,163,74,0.05))] sm:h-72">
                 <img src={image} alt={name} className="h-full w-full object-contain p-4" loading="lazy" />
@@ -147,7 +147,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealUp} className="section-spotlight rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#16A34A]">Courses</p>
@@ -164,9 +164,9 @@ export default function HomePage() {
           {programs.map((program) => (
             <motion.article
               key={program.title}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.25 }}
-              className="overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] shadow-[0_16px_32px_rgba(15,23,42,0.05)]"
+              whileHover={{ y: -10, scale: 1.01 }}
+              transition={{ duration: 0.28 }}
+              className="elevated-card overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] shadow-[0_16px_32px_rgba(15,23,42,0.05)]"
             >
               <div className="grid gap-5 p-4 sm:p-6 md:grid-cols-[0.95fr_1.05fr] md:p-7">
                 <img src={program.image} alt={program.title} className="h-48 w-full rounded-3xl object-cover sm:h-56" loading="lazy" />
@@ -201,7 +201,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealUp} className="section-spotlight rounded-[28px] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Why Choose LearnPark</p>
           <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
@@ -213,9 +213,9 @@ export default function HomePage() {
           {whyChoose.map(([type, title, text]) => (
             <motion.article
               key={title}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.25 }}
-              className="rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-[0_12px_24px_rgba(15,23,42,0.04)]"
+              whileHover={{ y: -10, scale: 1.01 }}
+              transition={{ duration: 0.28 }}
+              className="elevated-card rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-[0_12px_24px_rgba(15,23,42,0.04)]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#DBEAFE] to-[#DCFCE7] text-[#2563EB]">
                 <FeatureIcon type={type} />
@@ -227,7 +227,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...revealLeft} className="rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealLeft} className="section-spotlight rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#2563EB]">Faculty</p>
@@ -242,7 +242,7 @@ export default function HomePage() {
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {faculty.map(([name, role, image]) => (
-            <article key={name} className="rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-[0_12px_24px_rgba(15,23,42,0.04)]">
+            <article key={name} className="elevated-card rounded-[28px] border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-[0_12px_24px_rgba(15,23,42,0.04)]">
               <img src={image} alt={name} className="h-20 w-20 rounded-full object-cover" loading="lazy" />
               <h3 className="font-heading mt-5 text-xl font-bold text-[#0F172A]">{name}</h3>
               <p className="mt-2 text-sm font-medium text-[#16A34A]">{role}</p>
@@ -254,7 +254,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...revealRight} className="rounded-[28px] bg-[linear-gradient(180deg,#EFF6FF_0%,#FFFFFF_100%)] px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealRight} className="section-spotlight rounded-[28px] bg-[linear-gradient(180deg,#EFF6FF_0%,#FFFFFF_100%)] px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#16A34A]">Testimonials</p>
           <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
@@ -264,7 +264,7 @@ export default function HomePage() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {testimonials.map(([title, quote, image]) => (
-            <article key={title} className="overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-white shadow-[0_16px_32px_rgba(15,23,42,0.05)]">
+            <article key={title} className="elevated-card overflow-hidden rounded-[28px] border border-[#E2E8F0] bg-white shadow-[0_16px_32px_rgba(15,23,42,0.05)]">
               <img src={image} alt={title} className="h-56 w-full object-cover sm:h-64" loading="lazy" />
               <div className="p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#2563EB]">{title}</p>
@@ -275,7 +275,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealUp} className="section-spotlight rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Reviews</p>
           <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
@@ -286,7 +286,7 @@ export default function HomePage() {
         <div className="comments-scroll-wrap mt-8">
           <div className="comments-scroll-track">
             {[...reviews, ...reviews].map((review, index) => (
-              <article key={`${review.name}-${index}`} className="comments-scroll-item rounded-[24px] border border-[#E2E8F0] bg-[#F8FAFC] p-5 shadow-[0_12px_24px_rgba(15,23,42,0.04)]">
+              <article key={`${review.name}-${index}`} className="comments-scroll-item elevated-card rounded-[24px] border border-[#E2E8F0] bg-[#F8FAFC] p-5 shadow-[0_12px_24px_rgba(15,23,42,0.04)]">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2563EB]">{review.name}</p>
                   <p className="text-sm font-semibold text-[#16A34A]">{review.rating.toFixed(1)}/5</p>
@@ -304,7 +304,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealUp} className="section-spotlight rounded-[28px] border border-[#E2E8F0] bg-white px-4 py-6 sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#2563EB]">FAQ</p>
           <h2 className="font-heading mt-3 text-2xl font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl md:text-4xl">
@@ -314,7 +314,7 @@ export default function HomePage() {
 
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {faqs.map(([question, answer]) => (
-            <article key={question} className="rounded-[24px] border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6">
+            <article key={question} className="elevated-card rounded-[24px] border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6">
               <h3 className="font-heading text-lg font-bold text-[#0F172A] sm:text-xl">{question}</h3>
               <p className="mt-3 leading-8 text-[#475569]">{answer}</p>
             </article>
@@ -322,7 +322,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <motion.section {...revealUp} className="overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#2563EB_0%,#1D4ED8_60%,#16A34A_140%)] px-4 py-6 text-white shadow-[0_24px_60px_rgba(37,99,235,0.22)] sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
+      <motion.section {...revealUp} className="section-spotlight overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#2563EB_0%,#1D4ED8_60%,#16A34A_140%)] px-4 py-6 text-white shadow-[0_24px_60px_rgba(37,99,235,0.22)] sm:px-6 sm:py-8 md:rounded-[32px] md:px-8 md:py-12">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/80">Start Today</p>

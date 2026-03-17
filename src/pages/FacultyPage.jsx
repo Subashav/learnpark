@@ -1,9 +1,20 @@
+import { motion } from 'framer-motion';
 import { faculty, testimonials } from '../data/siteContent';
 
 export default function FacultyPage() {
+  const revealUp = {
+    initial: { opacity: 0, y: 88, scale: 0.92, rotateX: 12, filter: 'blur(12px)' },
+    whileInView: { opacity: 1, y: 0, scale: 1, rotateX: 0, filter: 'blur(0px)' },
+    transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1] },
+    viewport: { once: true, amount: 0.22 },
+  };
+
   return (
     <>
-      <section className="mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
+      <motion.section
+        {...revealUp}
+        className="section-spotlight mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8"
+      >
         <div className="mb-8 max-w-3xl">
           <p className="text-xs uppercase tracking-[0.24em] text-[#1F78B4]">Faculty</p>
           <h1 className="font-heading mt-3 text-2xl font-bold md:text-4xl">Experienced subject experts for every section.</h1>
@@ -12,9 +23,11 @@ export default function FacultyPage() {
 
         <div className="grid gap-4 md:grid-cols-3">
           {faculty.map(([name, role, image]) => (
-            <article
+            <motion.article
               key={name}
-              className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
+              whileHover={{ y: -10, scale: 1.01 }}
+              transition={{ duration: 0.28 }}
+              className="elevated-card rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
             >
               <img
                 src={image}
@@ -27,14 +40,19 @@ export default function FacultyPage() {
               <p className="mt-4 text-sm text-[#5F5B55]">
                 Dedicated mentoring, chapter strategy, and exam-focused doubt resolution.
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <motion.section {...revealUp} className="section-spotlight grid gap-4 md:grid-cols-3">
         {testimonials.map(([title, quote, image]) => (
-          <article key={title} className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6">
+          <motion.article
+            key={title}
+            whileHover={{ y: -10, scale: 1.01 }}
+            transition={{ duration: 0.28 }}
+            className="elevated-card rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
+          >
             <img
               src={image}
               alt={title}
@@ -43,9 +61,9 @@ export default function FacultyPage() {
             />
             <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">{title}</p>
             <p className="mt-4 text-base leading-7 text-[#5F5B55] sm:text-lg sm:leading-8">{quote}</p>
-          </article>
+          </motion.article>
         ))}
-      </section>
+      </motion.section>
     </>
   );
 }

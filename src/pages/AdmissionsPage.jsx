@@ -1,7 +1,19 @@
+import { motion } from 'framer-motion';
+
 export default function AdmissionsPage() {
+  const revealUp = {
+    initial: { opacity: 0, y: 88, scale: 0.92, rotateX: 12, filter: 'blur(12px)' },
+    whileInView: { opacity: 1, y: 0, scale: 1, rotateX: 0, filter: 'blur(0px)' },
+    transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1] },
+    viewport: { once: true, amount: 0.22 },
+  };
+
   return (
     <>
-      <section className="mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 text-center shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8">
+      <motion.section
+        {...revealUp}
+        className="section-spotlight mt-2 rounded-[2rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 text-center shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6 md:p-8"
+      >
         <p className="text-xs uppercase tracking-[0.28em] text-[#1F78B4]">Admissions Open</p>
         <h1 className="font-heading mt-3 text-2xl font-bold md:text-4xl">
           Start your NEET preparation with the right batch and the right mentor.
@@ -13,24 +25,26 @@ export default function AdmissionsPage() {
         <button className="mercury-btn relative mt-8 inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-[#1F78B4] bg-gradient-to-r from-[#1F78B4] to-[#2E9E72] px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto sm:px-8">
           Apply for Admission
         </button>
-      </section>
+      </motion.section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <motion.section {...revealUp} className="section-spotlight grid gap-4 md:grid-cols-3">
         {[
           ['Counselling', 'Personal batch guidance from our NEET mentors.'],
           ['Assessment', 'Baseline test and preparation plan in week 1.'],
           ['Onboarding', 'Access to classes, sheets, and weekly tests.'],
         ].map(([title, desc]) => (
-          <article
+          <motion.article
             key={title}
-            className="rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
+            whileHover={{ y: -10, scale: 1.01 }}
+            transition={{ duration: 0.28 }}
+            className="elevated-card rounded-[1.5rem] border border-[#ECE8E1] bg-[#F3F3F3] p-5 shadow-[0_8px_24px_rgba(31,31,33,0.05)] sm:p-6"
           >
             <p className="text-xs uppercase tracking-[0.22em] text-[#1F78B4]">Step</p>
             <h2 className="font-heading mt-3 text-xl font-bold text-[#2E9E72] sm:text-2xl">{title}</h2>
             <p className="mt-3 text-[#5F5B55]">{desc}</p>
-          </article>
+          </motion.article>
         ))}
-      </section>
+      </motion.section>
     </>
   );
 }
