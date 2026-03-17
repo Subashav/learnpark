@@ -156,10 +156,10 @@ export default function SiteLayout() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Contact</p>
               <div className="mt-4 flex flex-col gap-3 text-sm leading-7 text-[#475569]">
-                <span>Phone: +91 98765 43210</span>
+                <span>Phone: 098948 49778</span>
                 <span>Email: info@learnparkacademy.in</span>
-                <span>Address: Near Bus Stand, Erode, Tamil Nadu</span>
-                <a href="https://maps.google.com/?q=Erode" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
+                <span>Address: 41/1, Nalli Hospital Rd, opp. Royal Theatre, Municipal Colony, Annamalai Layout, Erode, Tamil Nadu 638004</span>
+                <a href="https://maps.google.com/?q=41/1+Nalli+Hospital+Rd+Erode+Tamil+Nadu+638004" target="_blank" rel="noreferrer" className="font-semibold text-[#2563EB] hover:text-[#1D4ED8]">
                   Open in Google Maps
                 </a>
               </div>

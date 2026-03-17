@@ -51,7 +51,9 @@ export default function HomePage() {
     name: 'LearnPark NEET Academy',
     description:
       'LearnPark NEET Academy delivers structured NEET preparation, expert faculty support, weekly testing, and proven medical entrance results.',
-    areaServed: 'Erode, Tamil Nadu, India',
+    areaServed: 'Erode, Tamil Nadu 638004, India',
+    address: '41/1, Nalli Hospital Rd, opp. Royal Theatre, Municipal Colony, Annamalai Layout, Erode, Tamil Nadu 638004',
+    telephone: '+91-98948-49778',
     educationalCredentialAwarded: 'NEET Entrance Preparation',
     url: 'https://learnpark.vercel.app/',
   };
