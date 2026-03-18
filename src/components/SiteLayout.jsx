@@ -26,7 +26,7 @@ export default function SiteLayout() {
     {
       title: 'About Institute',
       links: [
-        { label: 'LearnPark Overview', to: '/' },
+        { label: 'LearnPark Overview', to: '/#home-overview' },
         { label: 'Know Us', to: '/know-us' },
         { label: 'Admissions', to: '/admissions' },
       ],
@@ -42,8 +42,8 @@ export default function SiteLayout() {
     {
       title: 'Trust Signals',
       links: [
-        { label: 'Results', to: '/' },
-        { label: 'Student Reviews', to: '/' },
+        { label: 'Results', to: '/#home-results' },
+        { label: 'Student Reviews', to: '/know-us' },
         { label: 'Book Counseling', to: '/admissions' },
       ],
     },
@@ -53,6 +53,23 @@ export default function SiteLayout() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMenuOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const rafId = window.requestAnimationFrame(() => {
+      if (location.hash) {
+        const targetId = decodeURIComponent(location.hash.replace('#', ''));
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
+          return;
+        }
+      }
+
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    });
+
+    return () => window.cancelAnimationFrame(rafId);
+  }, [location.pathname, location.search, location.hash]);
 
   useEffect(() => {
     if (!isPromoVisible) {
@@ -241,9 +258,9 @@ export default function SiteLayout() {
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">{column.title}</p>
                 <div className="mt-4 flex flex-col gap-3 text-sm text-[#475569]">
                   {column.links.map((link) => (
-                    <NavLink key={link.label} to={link.to} className="hover-pop transition-colors hover:text-[#2563EB]" data-pop="Open">
+                    <Link key={link.label} to={link.to} className="hover-pop transition-colors hover:text-[#2563EB]" data-pop="Open">
                       {link.label}
-                    </NavLink>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -253,8 +270,8 @@ export default function SiteLayout() {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#64748B]">Contact</p>
               <div className="mt-4 grid gap-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:p-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,0.55fr)]">
                 <div className="flex flex-col gap-3 break-words text-sm leading-7 text-[#475569]">
-                  <span>Phone: +91 98948 49778 / 94878 01778</span>
-                  <span>Email: learnpark.edu@gmail.com</span>
+                  <a href="tel:+919894849778" className="hover-pop transition-colors hover:text-[#2563EB]">Phone: +91 98948 49778 / 94878 01778</a>
+                  <a href="mailto:learnpark.edu@gmail.com" className="hover-pop transition-colors hover:text-[#2563EB]">Email: learnpark.edu@gmail.com</a>
                   <span>Address: 41, Nalli Hospital Road, Opp Royal Theatre, Erode - 638001, TN, India</span>
                   <a href="https://maps.google.com/?q=41+Nalli+Hospital+Road+Opp+Royal+Theatre+Erode+638001" target="_blank" rel="noreferrer" className="hover-pop font-semibold text-[#2563EB] hover:text-[#1D4ED8]" data-pop="Open Map">
                     Open in Google Maps
