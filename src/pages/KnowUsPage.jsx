@@ -97,13 +97,7 @@ export default function AboutUsPage() {
         ) : null}
       </AnimatePresence>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
-        className="section-reveal is-visible py-12"
-      >
+      <section className="py-12">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Learn Park Academy</p>
           <h1 className="font-heading mt-3 text-3xl font-bold text-[#111827] sm:text-4xl">Shaping Future Doctors &amp; Engineers</h1>
@@ -272,7 +266,7 @@ export default function AboutUsPage() {
             Photos from our campus, classroom culture, faculty sessions, and student journey.
           </p>
         </div>
-      </motion.section>
+      </section>
 
       <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} variants={gridReveal} className="section-reveal pb-16">
         <div className="max-w-6xl mx-auto px-4">
