@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import lnpk4 from '../assets/LNPK (4).jpg.jpeg';
-import group1 from '../assets/group 1.JPG.jpeg';
-import group2 from '../assets/group 2.JPG.jpeg';
-import group3 from '../assets/group 3.jpg.jpeg';
-import group4 from '../assets/Group 4.jpeg';
-import eventImage from '../assets/IMG_20211029_161450.jpg.jpeg';
-import lnpk1 from '../assets/LNPK (1).jpg.jpeg';
-import lnpk2 from '../assets/LNPK (2).jpg.jpeg';
-import lnpk3 from '../assets/LNPK (3).jpg.jpeg';
-import founderImage from '../assets/RAJA.jpg.jpeg';
-import neet2025_8 from '../assets/LEARN PARK NEET 2025 (8).png';
-import neet2025_1 from '../assets/LEARN PARK NEET 2025 (1).png';
-import neet2025_10 from '../assets/NEET 2025 LEARN PARK (10).png';
-import neet2025_4 from '../assets/LEARN PARK NEET 2025 (4).png';
-import neet2025_7 from '../assets/LEARN PARK NEET 2025 (7).png';
-import neet2025_3 from '../assets/LEARN PARK NEET 2025 (3).png';
-import neet2025_2 from '../assets/LEARN PARK NEET 2025 (2).png';
+import lnpk4 from '../assets/optimized/lnpk-4.webp';
+import group1 from '../assets/optimized/group-1.webp';
+import group2 from '../assets/optimized/group-2.webp';
+import group3 from '../assets/optimized/group-3.webp';
+import group4 from '../assets/optimized/group-4.webp';
+import eventImage from '../assets/optimized/event.webp';
+import lnpk1 from '../assets/optimized/lnpk-1.webp';
+import lnpk2 from '../assets/optimized/lnpk-2.webp';
+import lnpk3 from '../assets/optimized/lnpk-3.webp';
+import founderImage from '../assets/optimized/raja-founder.webp';
+import neet2025_8 from '../assets/optimized/neet-2025-8.webp';
+import neet2025_1 from '../assets/optimized/neet-2025-1.webp';
+import neet2025_10 from '../assets/optimized/neet-2025-10.webp';
+import neet2025_4 from '../assets/optimized/neet-2025-4.webp';
+import neet2025_7 from '../assets/optimized/neet-2025-7.webp';
+import neet2025_3 from '../assets/optimized/neet-2025-3.webp';
+import neet2025_2 from '../assets/optimized/neet-2025-2.webp';
 
 const galleryImages = [
   { src: lnpk4, alt: 'LearnPark institute banner and team' },
@@ -123,6 +123,7 @@ export default function AboutUsPage() {
                 alt="Mr. Raja Dharmalingam, Founder of Learn Park Academy"
                 className="h-full w-full object-cover"
                 loading="lazy"
+                decoding="async"
               />
               <div className="p-6 sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4F46E5]">Founder</p>
@@ -257,6 +258,8 @@ export default function AboutUsPage() {
                     alt={image.alt}
                     className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111827]/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </motion.button>
@@ -289,6 +292,8 @@ export default function AboutUsPage() {
                   alt={image.alt}
                   className={`w-full transition-transform duration-500 group-hover:scale-[1.04] ${idx === 0 ? 'max-h-[560px] object-contain bg-[#F8FAFC]' : 'h-72 object-cover'}`}
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
 
                 <div className="pointer-events-none absolute inset-0 border-2 border-transparent transition-all duration-300 group-hover:border-[#4F46E5]/45" />
