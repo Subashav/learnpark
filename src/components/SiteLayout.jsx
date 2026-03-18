@@ -12,7 +12,7 @@ const promoBanners = [
 const navItems = [
   { to: '/', label: 'Home' },
   { to: '/programs', label: 'Programs' },
-  { to: '/know-us', label: 'Know Us' },
+  { to: '/about-us', label: 'About Us' },
   { to: '/admissions', label: 'Admissions' },
 ];
 
@@ -27,7 +27,7 @@ export default function SiteLayout() {
       title: 'About Institute',
       links: [
         { label: 'LearnPark Overview', to: '/#home-overview' },
-        { label: 'Know Us', to: '/know-us' },
+        { label: 'About Us', to: '/about-us' },
         { label: 'Admissions', to: '/admissions' },
       ],
     },
@@ -43,7 +43,7 @@ export default function SiteLayout() {
       title: 'Trust Signals',
       links: [
         { label: 'Results', to: '/#home-results' },
-        { label: 'Student Reviews', to: '/know-us' },
+        { label: 'Student Reviews', to: '/about-us' },
         { label: 'Book Counseling', to: '/admissions' },
       ],
     },
