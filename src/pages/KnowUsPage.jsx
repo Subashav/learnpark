@@ -102,7 +102,7 @@ export default function AboutUsPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6 }}
-        className="section-reveal py-12"
+        className="section-reveal is-visible py-12"
       >
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#4F46E5]">Learn Park Academy</p>
@@ -122,8 +122,9 @@ export default function AboutUsPage() {
                 src={founderImage}
                 alt="Mr. Raja Dharmalingam, Founder of Learn Park Academy"
                 className="h-full w-full object-cover"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
+                fetchPriority="high"
               />
               <div className="p-6 sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4F46E5]">Founder</p>
